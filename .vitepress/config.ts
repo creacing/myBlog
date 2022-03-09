@@ -45,12 +45,10 @@ async function config() {
       posts: await getPosts(),
       pageSize: 5, //几个为一页
       postLength: await getPostLength(), //博客有几篇
-
-      //       algolia: {
-      //         apiKey: "90a0bae6ff7307fb76896cbe2f975b0c",
-      //         indexName: "clark-cui-docs",
-      //       },
-
+      // algolia: {
+      //   apiKey: "90a0bae6ff7307fb76896cbe2f975b0c",
+      //   indexName: "clark-cui-docs",
+      // },
       nav: [
         {
           text: "🏡Home",

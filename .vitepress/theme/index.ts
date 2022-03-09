@@ -16,3 +16,5 @@ export default {
     // siteData is a ref of current site-level metadata.
   },
 };
+
+//注册全局组件

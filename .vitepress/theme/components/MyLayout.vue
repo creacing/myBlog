@@ -6,7 +6,7 @@
       <Category v-if="isPost" />
     </template>
     <template #page-bottom>
-      <Comments v-if="isPost" />
+      <!-- <Comments v-if="isPost" /> -->
     </template>
     <!-- Home slot-->
     <template #home-hero><HomeHero /> </template>
@@ -20,7 +20,7 @@ import DefaultTheme from "vitepress/theme";
 const { Layout } = DefaultTheme;
 import HomeHero from "./HomeHero.vue";
 import CopyWright from "./CopyWright.vue";
-import Comments from "./Comments.vue";
+// import Comments from "./Comments.vue";
 import Page from "./Page.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 import Category from "./Category.vue";
