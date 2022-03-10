@@ -1,4 +1,6 @@
 <template>
+  <div class="cover"></div>
+  <div class="mask"></div>
   <Layout>
     <template #navbar-search> <ToggleTheme /></template>
     <template #page-top>
@@ -33,4 +35,23 @@ const isPost = computed(() => {
 });
 </script>
 <style scoped>
+.cover {
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mask {
+  height: 100vh;
+  width: 100%;
+  /* filter: blur(5px); */
+  position: absolute;
+  z-index: -9;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 0;
+  left: 0;
+}
 </style>

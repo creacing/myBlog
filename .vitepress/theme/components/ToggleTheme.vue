@@ -1,7 +1,7 @@
 <template>
   <div class="toggleTheme" @click="toggle">
-    <div class="light" v-if="isLight">🔆</div>
-    <div class="dark" v-else>🌙</div>
+    <!-- <div class="light" v-if="isLight">🔆</div>
+    <div class="dark" v-else>🌙</div> -->
   </div>
 </template>
 <script lang="ts" setup>
