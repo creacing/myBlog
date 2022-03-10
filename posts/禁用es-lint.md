@@ -8,4 +8,4 @@ tags:
 
 ### 禁用es-lint
 
-![alt](/禁用es-lint.png)
+![alt](/es-lint.png)
