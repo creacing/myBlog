@@ -23,7 +23,8 @@ const date = dayjs().to(dayjs(lastUpdated));
 </script>
 <style scoped>
 .title {
-  color: #37463c;
+  /* color: #37463c; */
+  color: var(--c-color);
   font-weight: 600;
   font-size: 2.25em;
   margin-top: 0.3em;
@@ -40,6 +41,7 @@ const date = dayjs().to(dayjs(lastUpdated));
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px dashed #c7c7c7;
+  color: #fff;
 }
 </style>
 

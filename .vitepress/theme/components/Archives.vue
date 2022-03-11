@@ -39,8 +39,9 @@ console.log(data, "data");
 }
 .year {
   padding: 16px 0 8px 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  color: var(--c-color);
 }
 
 .article {
@@ -48,7 +49,9 @@ console.log(data, "data");
   align-items: center;
   justify-content: space-between;
   margin: 10px 10px;
-  color: #666;
+  /* color: #666; */
+  color: #000;
+  font-weight: 600;
   transition: border 0.3s ease, color 0.3s ease;
 }
 .article:hover {

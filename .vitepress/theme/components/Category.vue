@@ -2,12 +2,14 @@
   <div class="category" v-if="headers.length > 0">
     <ul>
       <li class="header" v-for="(item, index) in headers" :key="item">
-        <a :href="`#${item.slug}`" class="header-h1" v-if="item.level === 2">{{
-          `${index + 1}. ${item.title}`
-        }}</a>
+        <a :href="`#${item.slug}`" class="header-h1" v-if="item.level === 2"
+          >{{ `${index + 1}. ${item.title}` }}
+          <div class="hr"></div
+        ></a>
         <ul v-if="item.level === 3">
           <li>
             <a :href="`#${item.slug}`" class="header-h2">{{ item.title }}</a>
+            <div class="hr"></div>
           </li>
         </ul>
       </li>
@@ -23,7 +25,7 @@ console.log(headers, "pageData");
 <style scoped>
 .category {
   width: 20rem;
-  background: var(--c-bg);
+  /* background: var(--c-bg); */
   /* box-shadow: 6px 6px var(--c-brand);  */
   /* box-shadow: 6px 6px var(--c-brand); */
 
@@ -41,8 +43,11 @@ console.log(headers, "pageData");
 }
 a {
   /* color: rgb(55, 70, 60); */
-  color: rgb(62, 62, 95);
-  font-weight: 600;
+  /* color: rgb(62, 62, 95); */
+  color: var(--c-color);
+  font-weight: 900;
+  display: block;
+  padding: 5px 0;
 }
 a:hover {
   /* text-decoration: none; */
@@ -50,10 +55,21 @@ a:hover {
 ul {
   list-style-type: none;
 }
+.hr {
+  /* width: 100%;
+  border-bottom: 1px dashed rgb(62, 62, 95); */
+}
 @media (min-width: 1400px) {
   .category {
     position: fixed;
-    right: 20px;
+    /* right: 20px; */
+    /* display: none; */
+    left: 20px;
+  }
+}
+@media (max-width: 1400px) {
+  .category {
+    display: none;
   }
 }
 </style>

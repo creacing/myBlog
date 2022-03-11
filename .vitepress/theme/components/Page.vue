@@ -47,7 +47,7 @@ let postsAll = theme.value.posts || [];
 // get postLength
 let postLength = theme.value.postLength;
 // get pageSize
-let pageSize = theme.value.pageSize + 2;
+let pageSize = theme.value.pageSize + 4;
 //  pagesNum
 let pagesNum =
   postLength % pageSize === 0
@@ -141,6 +141,9 @@ const transDate = (date: string) => {
 </script>
 
 <style scoped>
+.article-short-intro :hover {
+  color: mediumslateblue;
+}
 .article-short-intro {
   display: flex;
   justify-content: space-between;
@@ -162,8 +165,9 @@ const transDate = (date: string) => {
   align-items: center;
 }
 .blogListBg {
-  background: rgb(255, 255, 255, 0.4);
-  width: 85%;
+  /* background: rgb(255, 255, 255, 0.4); */
+  /* width: 85%; */
+  width: 100%;
   border-radius: 10px;
   max-width: 700px;
 }
@@ -179,26 +183,30 @@ const transDate = (date: string) => {
   /* box-shadow: 6px 6px var(--c-brand);
   border: 4px solid #282936; */
   cursor: pointer;
+  /* color: var(-c-color); */
 }
 .blog:hover {
   text-decoration: none;
   transform: translate(-2px, -2px);
   /* box-shadow: 10px 10px var(--c-brand); */
+  /* color: mediumslateblue; */
 }
 .title {
-  color: rgb(62, 62, 95);
+  /* color: rgb(62, 62, 95); */
   /* color: var(--c-color); */
   /* color: var(--c-brand-light); */
   font-size: 1.2em;
   font-weight: bold;
+  color: var(--c-color);
 }
 .date {
   /* padding-bottom: 7px; */
   /* color: var(--c-brand-light); */
-  color: rgb(62, 62, 95);
+  /* color: rgb(62, 62, 95); */
   /* color: var(--c-color); */
   font-size: 1.2em;
   font-weight: bold;
+  color: var(--c-color);
 }
 .pagination {
   display: flex;
@@ -214,20 +222,22 @@ const transDate = (date: string) => {
   height: 2rem;
   line-height: 2rem;
   text-align: center;
-  border: 1px solid #282936;
+  /* border: 1px solid #282936; */
   cursor: pointer;
   /* border-right: none; */
   transition: 0.2s;
   border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .link:last-child {
-  border-right: 1px solid #282936;
+  /* border-right: 1px solid #282936; */
 }
 .link:hover {
   transform: translate(-1px, -1px);
 }
 .activeLink {
-  background-color: var(--c-brand);
+  /* background-color: var(--c-brand); */
+  background-color: mediumslateblue;
   color: white;
 }
 </style>

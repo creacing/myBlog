@@ -2,7 +2,7 @@ import { getPosts, getPostLength } from "./theme/serverUtils";
 
 async function config() {
   return {
-    lang: "en-US",
+    lang: "zh-CN",
     title: "ooo",
     description: "ooo •ᴗ• blog",
     head: [
@@ -51,19 +51,19 @@ async function config() {
       // },
       nav: [
         {
-          text: "🏠Home",
+          text: "🏠主页",
           link: "/",
         },
         {
-          text: "🏷️Tags",
-          link: "/tags",
-        },
-        {
-          text: "📝Archives",
+          text: "📝归档",
           link: "/archives",
         },
         {
-          text: "🌱About",
+          text: "🏷️标签",
+          link: "/tags",
+        },
+        {
+          text: "🌱关于",
           link: "/about",
         },
       ],

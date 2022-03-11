@@ -4,7 +4,7 @@
   <div class="nav-bar-mask"></div>
   <Layout>
     <template #navbar-search> <ToggleTheme /></template>
-    <template #page-top>
+    <template #page-top class="page-top">
       <Title v-if="isPost" />
       <Category v-if="isPost" />
     </template>
@@ -41,15 +41,15 @@ const isPost = computed(() => {
   width: 100%;
   z-index: -10;
   background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
 .mask {
   height: 100vh;
   width: 100%;
-  /* filter: blur(5px); */
-  position: absolute;
+  /* filter: blur(9px); */
+  position: fixed;
   z-index: -9;
   background-color: rgba(255, 255, 255, 0.3);
   top: 0;
@@ -59,7 +59,7 @@ const isPost = computed(() => {
   position: fixed;
   width: 100%;
   height: var(--header-height);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
   right: 0;
   left: 0;
   z-index: -1;
