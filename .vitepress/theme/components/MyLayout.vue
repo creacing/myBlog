@@ -30,7 +30,7 @@ import Title from "./Title.vue";
 import { useData } from "vitepress";
 import { computed } from "vue";
 const isPost = computed(() => {
-  console.log("compute");
+  //判断是否为文章页面用于控制 <Title/> <Category/> 显示
   return useData().page.value.relativePath.indexOf("posts") > -1 ? true : false;
 });
 </script>

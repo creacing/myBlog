@@ -4,6 +4,7 @@
     <span
       @click="toggleTag(key)"
       v-for="(item, key) in data"
+      :key="item"
       class="tag"
       :style="getFontSize(data[key].length)"
       :class="{ activetag: selectTag === key }"
@@ -12,7 +13,8 @@
     </span>
   </div>
 
-  <h4 class="header" v-show="selectTag">
+  <!-- <h4 class="header" v-show="selectTag"> -->
+  <h4 class="header">
     <svg
       t="1641783753540"
       class="fas-icon"
@@ -44,17 +46,22 @@
   </a>
 </template>
 <script lang="ts" setup>
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { useData, withBase } from "vitepress";
 import { initTags } from "../utils";
 
 const { theme } = useData();
 const data = computed(() => initTags(theme.value.posts));
-console.log(data, "data");
+
+//ooo 给tags设置默认值
+const selectTagDefault: string = Object.keys(data.value)[0];
 let selectTag = ref("");
+selectTag.value = selectTagDefault;
+
 const toggleTag = (tag: string) => {
   selectTag.value = tag;
 };
+
 // set font-size
 const getFontSize = (length: number) => {
   let size = length * 0.04 + 0.85;

@@ -1,9 +1,9 @@
 <template>
   <div class="category" v-if="headers.length > 0">
     <ul>
-      <li class="header" v-for="item in headers">
+      <li class="header" v-for="(item, index) in headers" :key="item">
         <a :href="`#${item.slug}`" class="header-h1" v-if="item.level === 2">{{
-          item.title
+          `${index + 1}. ${item.title}`
         }}</a>
         <ul v-if="item.level === 3">
           <li>
@@ -24,12 +24,27 @@ console.log(headers, "pageData");
 .category {
   width: 20rem;
   background: var(--c-bg);
-  box-shadow: 6px 6px var(--c-brand);
-  border: 4px solid #282936;
-  color: var(--c-brand-light);
+  /* box-shadow: 6px 6px var(--c-brand);  */
+  /* box-shadow: 6px 6px var(--c-brand); */
+
+  /* border: 4px solid #282936; */
+  /* border: 4px dashed #c7c7c7; */
+  background-color: rgba(245, 248, 250, 0.2);
+  border-radius: 24px;
+  /* color: var(--c-brand-light); */
+  box-shadow: 3px 3px 3px #dddfe1;
+  padding: 10px;
+  border: 1px solid rgba(245, 248, 250, 0.8);
 }
 .header-h2 {
   text-indent: 2;
+}
+a {
+  color: rgb(55, 70, 60);
+  font-weight: 600;
+}
+a:hover {
+  /* text-decoration: none; */
 }
 ul {
   list-style-type: none;

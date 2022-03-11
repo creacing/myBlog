@@ -6,7 +6,7 @@
     </h1>
     <p>一个专注于前端的技术爱好者。</p>
     <div class="cardPart">
-      <div class="card" v-for="item in list" @click="go(item)">
+      <div class="card" v-for="item in list" @click="go(item)" :key="item">
         <svg
           t="1641801440748"
           class="icon"
@@ -59,6 +59,7 @@ const go = (item: card) => {
 }
 .share-avator {
   width: 50px;
+  border-radius: 50px;
 }
 .cardPart {
   display: flex;

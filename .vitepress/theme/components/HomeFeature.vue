@@ -1,6 +1,6 @@
 <template>
   <div class="feature">
-    <article>
+    <!-- <article>
       <p>工具是第一生产力</p>
       <p>
         使用什么样的工具，就能做什么样的事。用工具的最佳实践来学习，往往能很快掌握一个领域
@@ -22,7 +22,7 @@
         quickly.Instead of sticking to the nitty-gritty of a tool, the ratio of
         input to return is low, and there is a risk of tool obsolescence.
       </p>
-    </article>
+    </article> -->
   </div>
 </template>
 <script lang="ts" setup>

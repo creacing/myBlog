@@ -1,6 +1,6 @@
 <template>
   <ShareCard />
-  <h1 class="blog-title">Blog</h1>
+  <!-- <h1 class="blog-title">Blog</h1> -->
   <div class="blogList">
     <a
       class="blog"
@@ -8,8 +8,12 @@
       :href="withBase(item.regularPath)"
       :key="item"
     >
-      <div class="title">{{ item.frontMatter.title }}</div>
-      <div class="date">{{ transDate(item.frontMatter.date) }}</div>
+      <div class="article-short-intro">
+        <div class="title">{{ item.frontMatter.title }}</div>
+        <div class="date">{{ transDate(item.frontMatter.date) }}</div>
+      </div>
+
+      <div class="line"></div>
     </a>
   </div>
   <div class="pagination">
@@ -39,7 +43,7 @@ let postsAll = theme.value.posts || [];
 // get postLength
 let postLength = theme.value.postLength;
 // get pageSize
-let pageSize = theme.value.pageSize;
+let pageSize = theme.value.pageSize + 2;
 //  pagesNum
 let pagesNum =
   postLength % pageSize === 0
@@ -133,6 +137,14 @@ const transDate = (date: string) => {
 </script>
 
 <style scoped>
+.article-short-intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.line {
+  border-bottom: 1px dashed rgb(198, 202, 204, 0.4);
+}
 .blog-title {
   text-align: center;
   font-weight: bold;
@@ -153,22 +165,28 @@ const transDate = (date: string) => {
   margin: 10px;
   background: var(--c-bg);
   max-width: 600px;
-  box-shadow: 6px 6px var(--c-brand);
-  border: 4px solid #282936;
+  /* box-shadow: 6px 6px var(--c-brand);
+  border: 4px solid #282936; */
   cursor: pointer;
 }
 .blog:hover {
   text-decoration: none;
   transform: translate(-2px, -2px);
-  box-shadow: 10px 10px var(--c-brand);
+  /* box-shadow: 10px 10px var(--c-brand); */
 }
 .title {
-  color: var(--c-brand-light);
+  color: rgb(62, 62, 95);
+  /* color: var(--c-brand-light); */
   font-size: 1.2em;
   font-weight: bold;
 }
 .date {
-  padding-bottom: 7px;
+  /* padding-bottom: 7px; */
+  /* color: var(--c-brand-light); */
+  color: rgb(62, 62, 95);
+
+  font-size: 1.2em;
+  font-weight: bold;
 }
 .pagination {
   display: flex;

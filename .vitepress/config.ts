@@ -51,18 +51,23 @@ async function config() {
       // },
       nav: [
         {
-          text: "🏡Home",
+          text: "🏠Home",
           link: "/",
         },
         {
-          text: "🔖Tags",
+          text: "🏷️Tags",
           link: "/tags",
         },
         {
-          text: "📃Archives",
+          text: "📝Archives",
           link: "/archives",
         },
+        {
+          text: "🌱About",
+          link: "/about",
+        },
       ],
+      //这里插入的是Emoji图片
       //侧边栏
       // sidebar: {
       //   "./posts/": false,
