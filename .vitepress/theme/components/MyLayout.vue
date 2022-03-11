@@ -1,6 +1,7 @@
 <template>
   <div class="cover"></div>
   <div class="mask"></div>
+  <div class="nav-bar-mask"></div>
   <Layout>
     <template #navbar-search> <ToggleTheme /></template>
     <template #page-top>
@@ -53,5 +54,14 @@ const isPost = computed(() => {
   background-color: rgba(255, 255, 255, 0.3);
   top: 0;
   left: 0;
+}
+.nav-bar-mask {
+  position: fixed;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(255, 255, 255, 0.4);
+  right: 0;
+  left: 0;
+  z-index: -1;
 }
 </style>

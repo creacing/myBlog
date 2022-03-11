@@ -29,18 +29,19 @@ console.log(headers, "pageData");
 
   /* border: 4px solid #282936; */
   /* border: 4px dashed #c7c7c7; */
-  background-color: rgba(245, 248, 250, 0.2);
+  /* background-color: rgba(245, 248, 250, 0.2); */
   border-radius: 24px;
   /* color: var(--c-brand-light); */
-  box-shadow: 3px 3px 3px #dddfe1;
+  /* box-shadow: 3px 3px 3px #dddfe1; */
   padding: 10px;
-  border: 1px solid rgba(245, 248, 250, 0.8);
+  /* border: 1px solid rgba(245, 248, 250, 0.8); */
 }
 .header-h2 {
   text-indent: 2;
 }
 a {
-  color: rgb(55, 70, 60);
+  /* color: rgb(55, 70, 60); */
+  color: rgb(62, 62, 95);
   font-weight: 600;
 }
 a:hover {

@@ -1,30 +1,34 @@
 <template>
-  <ShareCard />
-  <!-- <h1 class="blog-title">Blog</h1> -->
-  <div class="blogList">
-    <a
-      class="blog"
-      v-for="item in posts"
-      :href="withBase(item.regularPath)"
-      :key="item"
-    >
-      <div class="article-short-intro">
-        <div class="title">{{ item.frontMatter.title }}</div>
-        <div class="date">{{ transDate(item.frontMatter.date) }}</div>
-      </div>
+  <div>
+    <ShareCard />
+    <!-- <h1 class="blog-title">Blog</h1> -->
+    <div class="blogList">
+      <div class="blogListBg">
+        <a
+          class="blog"
+          v-for="item in posts"
+          :href="withBase(item.regularPath)"
+          :key="item"
+        >
+          <div class="article-short-intro">
+            <div class="title">{{ item.frontMatter.title }}</div>
+            <div class="date">{{ transDate(item.frontMatter.date) }}</div>
+          </div>
 
-      <div class="line"></div>
-    </a>
-  </div>
-  <div class="pagination">
-    <div
-      class="link"
-      :class="{ activeLink: pageCurrent === i }"
-      v-for="i in pagesNum"
-      :key="i"
-      @click="go(i)"
-    >
-      {{ i }}
+          <div class="line"></div>
+        </a>
+      </div>
+    </div>
+    <div class="pagination">
+      <div
+        class="link"
+        :class="{ activeLink: pageCurrent === i }"
+        v-for="i in pagesNum"
+        :key="i"
+        @click="go(i)"
+      >
+        {{ i }}
+      </div>
     </div>
   </div>
 </template>
@@ -157,14 +161,21 @@ const transDate = (date: string) => {
   justify-content: center;
   align-items: center;
 }
+.blogListBg {
+  background: rgb(255, 255, 255, 0.4);
+  width: 85%;
+  border-radius: 10px;
+  max-width: 700px;
+}
 .blog {
   width: 85%;
   display: block;
   border-radius: 10px;
   padding: 0 20px;
   margin: 10px;
-  background: var(--c-bg);
-  max-width: 600px;
+  /* background: var(--c-bg); */
+  /* max-width: 600px; */
+  max-width: 700px;
   /* box-shadow: 6px 6px var(--c-brand);
   border: 4px solid #282936; */
   cursor: pointer;
@@ -176,6 +187,7 @@ const transDate = (date: string) => {
 }
 .title {
   color: rgb(62, 62, 95);
+  /* color: var(--c-color); */
   /* color: var(--c-brand-light); */
   font-size: 1.2em;
   font-weight: bold;
@@ -184,7 +196,7 @@ const transDate = (date: string) => {
   /* padding-bottom: 7px; */
   /* color: var(--c-brand-light); */
   color: rgb(62, 62, 95);
-
+  /* color: var(--c-color); */
   font-size: 1.2em;
   font-weight: bold;
 }

@@ -8,6 +8,7 @@
 
   --c-hover: #212121;
   --c-bg: unset;
+  --c-color: #000000;
 }
 .dark {
   /* --c-brand: red;
@@ -29,4 +30,7 @@
 } */
 .theme {
   background-color: var(--c-bg);
+}
+header {
+  background-color: rgba(255, 255, 255, 0.4);
 }

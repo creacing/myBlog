@@ -4,7 +4,7 @@
       <img class="share-avator" src="/avator.jpg" />
       <span>Hi, I'm ooo 👋</span>
     </h1>
-    <p>一个专注于前端的技术爱好者。</p>
+    <p class="shortIntro">一个专注于前端的技术爱好者。</p>
     <div class="cardPart">
       <div class="card" v-for="item in list" @click="go(item)" :key="item">
         <svg
@@ -53,9 +53,11 @@ const go = (item: card) => {
 </script>
 <style scoped>
 .shareCard {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* color: var(--c-color); */
 }
 .share-avator {
   width: 50px;
@@ -69,6 +71,9 @@ const go = (item: card) => {
 }
 .card:hover {
   transform: translate(-2px, -2px);
+}
+.shortIntro{
+  font-weight: 600;
 }
 </style>
 
