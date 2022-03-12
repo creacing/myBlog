@@ -1,6 +1,6 @@
 ---
-title: vscode配置
-description: vscode配置
+title: vscode设置图片背景
+description: vscode设置图片背景
 date: 2021-11-18
 tags:
   - vscode

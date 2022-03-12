@@ -1,7 +1,6 @@
 <template>
   <h1 class="title">{{ title }}</h1>
   <div class="date">🕒 lastUpdated: {{ date }}</div>
-  <!-- <div class="description">{{ description }}</div> -->
 </template>
 <script lang="ts" setup>
 import { useData } from "vitepress";
@@ -17,13 +16,11 @@ type pageData = {
 };
 const pageData: pageData = useData().page.value;
 const { title, description, lastUpdated } = pageData;
-// /https://day.js.org/docs/zh-CN/plugin/relative-time
 dayjs.extend(relativeTime);
 const date = dayjs().to(dayjs(lastUpdated));
 </script>
 <style scoped>
 .title {
-  /* color: #37463c; */
   color: var(--c-color);
   font-weight: 600;
   font-size: 2.25em;
@@ -41,7 +38,7 @@ const date = dayjs().to(dayjs(lastUpdated));
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px dashed #c7c7c7;
-  color: #fff;
+  color: var(--c-color);
 }
 </style>
 

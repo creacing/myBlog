@@ -1,8 +1,6 @@
 <template>
   <footer>
     Powered by
-    <!-- <a href="https://github.com/clark-cui/" target="_blank" title="作者"
-      >clark-cui</a -->
     <a href="" target="_blank" title="作者">七夜许愿星</a>
     | Copyright © 2022-{{ date }} | MIT License
   </footer>

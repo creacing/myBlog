@@ -13,8 +13,6 @@
         {{ key }} <span class="tag-length">{{ data[key].length }}</span>
       </span>
     </div>
-
-    <!-- <h4 class="header" v-show="selectTag"> -->
     <h4 class="header">
       <svg
         t="1641783753540"
@@ -72,15 +70,6 @@ const getFontSize = (length: number) => {
 </script>
 
 <style scoped>
-.my-tags {
-  /* color: rgb(62, 62, 95); */
-  /* min-height: 100vh;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.4); */
-  /* border-radius: 10px; */
-  /* box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4); */
-  /* border: 1px solid rgba(255, 255, 255, 0.4); */
-}
 .tags-header {
   font-weight: bold;
   padding-bottom: 14px;
@@ -91,7 +80,6 @@ const getFontSize = (length: number) => {
   flex-wrap: wrap;
   align-items: center;
   justify-content: left;
-
   border-bottom: 1px dashed #c7c7c7;
   margin-bottom: 10px;
   padding-bottom: 20px;
@@ -102,18 +90,17 @@ const getFontSize = (length: number) => {
   font-size: 0.85em;
   line-height: 25px;
   transition: 0.4s;
-  /* color: #a1a1a1; */
-  color: #fff;
-  /* color: var(--c-color); */
+  color: var(--c-color);
   cursor: pointer;
+  font-weight: var(--font-title2-weight);
 }
+/* 标签  */
 .tag:hover {
-  /* color: var(--c-hover); */
   color: mediumslateblue;
 }
+/* 标签激活 */
 .activetag {
-  /* color: var(--c-hover); */
-  color: #000;
+  color: mediumslateblue;
 }
 .tag-length {
   color: var(--c-brand);
@@ -141,8 +128,6 @@ const getFontSize = (length: number) => {
   align-items: center;
   justify-content: space-between;
   margin: 10px 10px;
-  /* color: #666; */
-  /* color: #fff; */
   color: var(--c-color);
   font-weight: 600;
   transition: border 0.3s ease, color 0.3s ease;

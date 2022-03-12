@@ -1,6 +1,6 @@
 <template>
   <div></div>
-  <!-- <div class="pic"></div> -->
+  <!-- <div class="pic">/div> -->
 </template>
 <script lang="ts" setup>
 // import avator from "../../../public/avator.jpg";

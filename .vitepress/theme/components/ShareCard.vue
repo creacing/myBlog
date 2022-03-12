@@ -57,7 +57,6 @@ const go = (item: card) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* color: var(--c-color); */
 }
 .share-avator {
   width: 50px;

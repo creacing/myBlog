@@ -188,22 +188,13 @@ const transDate = (date: string) => {
 .blog:hover {
   text-decoration: none;
   transform: translate(-2px, -2px);
-  /* box-shadow: 10px 10px var(--c-brand); */
-  /* color: mediumslateblue; */
 }
 .title {
-  /* color: rgb(62, 62, 95); */
-  /* color: var(--c-color); */
-  /* color: var(--c-brand-light); */
   font-size: 1.2em;
   font-weight: bold;
   color: var(--c-color);
 }
 .date {
-  /* padding-bottom: 7px; */
-  /* color: var(--c-brand-light); */
-  /* color: rgb(62, 62, 95); */
-  /* color: var(--c-color); */
   font-size: 1.2em;
   font-weight: bold;
   color: var(--c-color);
