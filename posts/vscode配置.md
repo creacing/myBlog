@@ -3,9 +3,15 @@ title: vscode配置
 description: vscode配置
 date: 2021-11-17
 tags:
-  - web
+  - vscode
 ---
 
+
+### 主题插件 
+
+在拓展搜索Cyberpunk
+
+### setting.json
 ```
 {
   // vscode默认启用了根据文件类型自动设置tabsize的选项
