@@ -2,34 +2,15 @@
   <div class="aboutPage">
     <div class="about">
       <article>
-        <h2><p class="about-header">欢迎来到 ooo 的个人小站</p></h2>
+        <h2><p class="about-header">欢迎来到😱七夜许愿星😱的个人小站</p></h2>
       </article>
 
       <article>
-        <p>工具是第一生产力</p>
-        <p>
-          使用什么样的工具，就能做什么样的事。用工具的最佳实践来学习，往往能很快掌握一个领域
-          80%的知识。
-        </p>
-        <p>
-          重点是快速上手工具的能力，而不是死扣一个工具的细枝末节，投入与回报比例很低，也有工具过时的风险。
-        </p>
-      </article>
-      <article>
-        <p>Tools are the first productivity</p>
-        <p>
-          what you do with the tools you use is what you do. Learning with the
-          best practices of tools often leads to a quick mastery of 80% of a
-          field's knowledge.
-        </p>
-        <p>
-          The focus is on the ability to get up to speed with a tool
-          quickly.Instead of sticking to the nitty-gritty of a tool, the ratio
-          of input to return is low, and there is a risk of tool obsolescence.
-        </p>
+        <p class="about-article-head">个人介绍</p>
+        <p class="about-article-body">一个专注于前端技术爱好者</p>
       </article>
     </div>
-    <div class="sideIntro">
+    <!-- <div class="sideIntro">
       <h1 class="side-avator">
         <img class="info-avator" src="/avator.jpg" />
         <span class="info-intro">ooo</span>
@@ -43,12 +24,19 @@
       </div>
 
       <div class="info-friends"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script lang="ts" setup>
 </script>
 <style scoped>
+.about-article-head {
+  font-size: var(--font-title2-size);
+  font-weight: var(--font-title2-weight);
+}
+.about-article-body {
+  font-weight: var(--font-title2-weight);
+}
 .side-avator {
   display: flex;
   flex-direction: column;
@@ -86,7 +74,10 @@
 }
 
 article {
-  display: block;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   border-radius: 10px;
   padding: 0 20px;
   margin: 10px;

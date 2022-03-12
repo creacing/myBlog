@@ -1,10 +1,10 @@
 <template>
   <div class="shareCard">
     <h1>
-      <img class="share-avator" src="/avator.jpg" />
-      <span>Hi, I'm ooo 👋</span>
+      <!-- <img class="share-avator" src="/avator.jpg" /> -->
+      <span>🌟我本世间远行客，幸得风雨同舟人。</span>
     </h1>
-    <p class="shortIntro">一个专注于前端的技术爱好者。</p>
+    <p class="shortIntro">一个专注于前端技术爱好者</p>
     <div class="cardPart">
       <div class="card" v-for="item in list" @click="go(item)" :key="item">
         <svg
@@ -72,7 +72,7 @@ const go = (item: card) => {
 .card:hover {
   transform: translate(-2px, -2px);
 }
-.shortIntro{
+.shortIntro {
   font-weight: 600;
 }
 </style>

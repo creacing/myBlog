@@ -3,8 +3,8 @@ import { getPosts, getPostLength } from "./theme/serverUtils";
 async function config() {
   return {
     lang: "zh-CN",
-    title: "ooo",
-    description: "ooo •ᴗ• blog",
+    title: "七夜许愿星",
+    description: "七夜许愿星的博客",
     head: [
       [
         "link",
@@ -18,7 +18,7 @@ async function config() {
         "meta",
         {
           name: "author",
-          content: "ooo",
+          content: "七夜的许愿星",
         },
       ],
       [
@@ -32,13 +32,14 @@ async function config() {
         "meta",
         {
           property: "og:description",
-          content: "ooo •ᴗ• blog",
+          content: "七夜许愿星的博客",
         },
       ],
     ],
     themeConfig: {
       // repo: "clark-cui/homeSite",
-      logo: "/tea.svg",
+      // logo: "/tea.svg",
+      logo: "./avator.jpg",
       docsDir: "/",
       // docsBranch: "master",
       lastUpdated: false,

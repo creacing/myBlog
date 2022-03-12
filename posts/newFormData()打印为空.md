@@ -3,7 +3,7 @@ title: new FormData() 打印为空
 description: new FormData() 打印为空
 date: 2021-09-09
 tags:
-  - typescript
+  - javascript
 ---
 
 ## new FormData()

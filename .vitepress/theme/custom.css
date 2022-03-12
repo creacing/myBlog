@@ -1,49 +1,69 @@
 /* .vitepress/theme/custom.css */
+
+
 /* body {
     background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg);
 } */
-/* mediumslateblue */
-:root {
-  --c-brand: #646cff;
-  --c-brand-light: #747bff;
 
-  --c-hover: #212121;
-  --c-bg: unset;
-  --c-color: #000000;
+
+/* mediumslateblue */
+
+:root {
+    --c-brand: #646cff;
+    --c-brand-light: #747bff;
+    --c-hover: #212121;
+    --c-bg: unset;
+    --c-color: #000000;
+    --font-title2-size: 1.4rem;
+    --font-title2-weight: 600;
 }
+
 .dark {
-  /* --c-brand: red;
+    /* --c-brand: red;
   --c-brand-light: pink; */
-  --c-bg: black;
-  --c-text: white;
-  --c-hover: #ffffff;
+    --c-bg: black;
+    --c-text: white;
+    --c-hover: #ffffff;
 }
+
 #app {
-  min-height: 100vh;
-  position: relative;
-  
+    min-height: 100vh;
+    position: relative;
 }
-h2, h3, p {
-  color: var(--c-color);
+
+h2,
+h3,
+p {
+    color: var(--c-color);
 }
+
+
 /* html, body, #app {
   height: 100%;
 } */
-.page, .home {
-  background: rgba(255, 255, 255, 0.3);
-  /* height: 100%; */
-  min-height: 100vh
+
+.page,
+.home {
+    background: rgba(255, 255, 255, 0.3);
+    /* height: 100%; */
+    min-height: 100vh
 }
+
+
 /* a {
 } */
+
+
 /* a:hover {
   text-decoration: none;
   color: var(--c-brand-light);
 } */
+
 .theme {
-  /* height: 100%; */
-  background-color: var(--c-bg);
+    /* height: 100%; */
+    background-color: var(--c-bg);
 }
+
 header {
-  background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
 }

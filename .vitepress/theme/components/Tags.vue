@@ -55,7 +55,7 @@ import { initTags } from "../utils";
 const { theme } = useData();
 const data = computed(() => initTags(theme.value.posts));
 
-//ooo 给tags设置默认值
+//给tags设置默认值
 const selectTagDefault: string = Object.keys(data.value)[0];
 let selectTag = ref("");
 selectTag.value = selectTagDefault;
