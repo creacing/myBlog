@@ -45,6 +45,19 @@ const isPost = computed(() => {
   top: 0;
   left: 0;
 }
+
+@media (max-width: 1200px) {
+  .cover {
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    background-image: url(/mbbg.png);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+  }
+}
 .mask {
   height: 100vh;
   width: 100%;
