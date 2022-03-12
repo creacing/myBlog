@@ -1048,6 +1048,11 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
+sakura-js@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmmirror.com/sakura-js/-/sakura-js-1.1.1.tgz#c932a6a5857537ad6dc7131cbbfec1844194dace"
+  integrity sha512-JWTK9RauYrZoDMymmuXRH+fFdqh9uJqZUdy0bUbt001w6N9QO82+gpTGoTtwDn+KROnffQIMTfQOvG8t9GwQDw==
+
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"

@@ -29,7 +29,30 @@ import ToggleTheme from "./ToggleTheme.vue";
 import Category from "./Category.vue";
 import Title from "./Title.vue";
 import { useData } from "vitepress";
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
+//樱花特效
+onMounted(() => {
+  const sakura = new Sakura("body", {
+    colors: [
+      {
+        gradientColorStart: "rgba(71, 69, 140, 0.9)",
+        gradientColorEnd: "rgba(101, 133, 158, 0.9)",
+        gradientColorDegree: 120,
+      },
+      {
+        gradientColorStart: "rgba(23, 23, 97)",
+        gradientColorEnd: "rgba(87, 82, 148)",
+        gradientColorDegree: 120,
+      },
+      {
+        gradientColorStart: "rgba(111, 96, 165)",
+        gradientColorEnd: "rgba(178, 178, 176)",
+        gradientColorDegree: 120,
+      },
+    ],
+  });
+});
+
 const isPost = computed(() => {
   //判断是否为文章页面用于控制 <Title/> <Category/> 显示
   return useData().page.value.relativePath.indexOf("posts") > -1 ? true : false;
