@@ -61,4 +61,7 @@ console.log(data, "data");
 .date {
   font-family: Georgia, sans-serif;
 }
+.content > div > div {
+  background: unset;
+}
 </style>

@@ -72,4 +72,7 @@ p {
   margin-inline-end: 0px;
   color: var(--c-color);
 }
+.content > div > div {
+  background: unset;
+}
 </style>

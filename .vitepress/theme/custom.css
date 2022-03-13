@@ -6,6 +6,9 @@
 } */
 
 
+/* rgba(9, 23, 68,0.6) */
+
+
 /* mediumslateblue */
 
 :root {
@@ -27,6 +30,10 @@
 #app {
     min-height: 100vh;
     position: relative;
+}
+
+.content>div>div {
+    background: rgba(9, 23, 68, 0.6);
 }
 
 h2,

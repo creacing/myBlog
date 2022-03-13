@@ -1,8 +1,11 @@
 <template>
   <div class="shareCard">
     <h1>
-      <!-- <img class="share-avator" src="/avator.jpg" /> -->
-      <span>🌟我本世间远行客，幸得风雨同舟人。</span>
+      <span class="home-title-large">🌟我本世间远行客，幸得风雨同舟人。</span>
+      <div class="home-title-small">
+        <p>我本世间远行客</p>
+        <p>幸得风雨同舟人</p>
+      </div>
     </h1>
     <p class="shortIntro">一个专注于前端技术爱好者</p>
     <div class="cardPart">
@@ -52,6 +55,17 @@ const go = (item: card) => {
 };
 </script>
 <style scoped>
+@media (max-width: 1100px) {
+  .home-title-large {
+    display: none;
+  }
+}
+@media (min-width: 1100px) {
+  .home-title-small {
+    display: none;
+  }
+}
+
 .shareCard {
   padding-top: 20px;
   display: flex;
