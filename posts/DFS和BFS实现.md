@@ -3,7 +3,7 @@ title: DFS和BFS实现
 description: DFS和BFS实现
 date: 2021-11-09
 tags:
-  - 数据结构与算法
+  - BFS_DFS
 ---
 
 ```javascript
