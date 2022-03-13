@@ -1,0 +1,120 @@
+---
+title: 图的广/深du遍历
+description: 图的广/深du遍历
+date: 2021-11-05
+tags:
+  - BFS_DFS
+---
+
+```javascript
+class Graph {
+    constructor(hasDirected = false) {
+        this.hasDirected = hasDirected //判断是否为有向图
+        this.vertices = [] //顶点
+        this.adjList = {} //临接矩阵
+    }
+    //添加顶点
+    addVertex(v) {
+        if (!this.vertices.includes(v)) {
+            this.vertices.push(v)
+ 
+            this.adjList[v] = []
+        }
+    }
+    //添加边 v,w为顶点
+    addEdge(v, w) {
+        !this.adjList[v] ? this.addVertex[v] : null
+        !this.adjList[w] ? this.addVertex[w] : null
+ 
+        this.adjList[v].push(w)
+ 
+        !this.hasDirected ? this.adjList[w].push(v) : null
+    }
+ 
+    getVertices() {
+        return this.vertices
+    }
+ 
+    getAdjList() {
+        return this.adjList
+    }
+}
+ 
+const graph = new Graph()
+ 
+const myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+ 
+for (const e of myVertices) {
+    graph.addVertex(e)
+}
+ 
+graph.addEdge('A', 'B')
+graph.addEdge('A', 'C')
+graph.addEdge('A', 'D')
+graph.addEdge('C', 'D')
+graph.addEdge('C', 'G')
+graph.addEdge('D', 'G')
+graph.addEdge('D', 'H')
+graph.addEdge('B', 'E')
+graph.addEdge('B', 'F')
+graph.addEdge('E', 'I')
+ 
+ 
+// console.log(graph);
+ 
+ 
+const Colors = {
+    WHITE: 0,
+    GREY: 1,
+    BLACK: 2
+}
+ 
+function initializeColor(vertices) {
+    const color = {}
+ 
+    for (const e of vertices) {
+        color[e] = Colors.WHITE
+    }
+ 
+    return color
+}
+ 
+//breadth
+function breadth(graph, statrtVertex, callBack) {
+    const vertices = graph.getVertices()
+    const adjList = graph.getAdjList()
+ 
+    const color = initializeColor(vertices)
+ 
+    const queue = []
+ 
+    queue.push(statrtVertex)
+ 
+    while (queue.length > 0) {
+        const currentVertex = queue.shift()
+        const neighbours = adjList[currentVertex]
+ 
+        color[currentVertex] = Colors.GREY
+        for (const e of neighbours) {
+ 
+            if (color[e] === Colors.WHITE) {
+                color[e] = Colors.GREY
+                queue.push(e)
+            }
+ 
+        }
+ 
+        color[currentVertex] = Colors.BLACK
+ 
+        callBack ? callBack(currentVertex) : null
+    }
+}
+ 
+function printVertex(value) {
+    console.log('Visited vertex:', value);
+}
+ 
+breadth(graph, myVertices[0], printVertex)
+ 
+//depth
+```

@@ -12,7 +12,9 @@
         >
           <div class="article-short-intro">
             <div class="title">{{ item.frontMatter.title }}</div>
-            <div class="date">{{ transDate(item.frontMatter.date) }}</div>
+            <div v-show="showDate" class="date">
+              {{ transDate(item.frontMatter.date) }}
+            </div>
           </div>
 
           <div class="line"></div>
@@ -41,7 +43,7 @@ import { onMounted, ref, reactive } from "vue";
 import ShareCard from "./ShareCard.vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
-
+const showDate = window.screen.width > 600 ? true : false;
 // get posts
 let postsAll = theme.value.posts || [];
 // get postLength
@@ -148,6 +150,11 @@ const transDate = (date: string) => {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px mediumslateblue;
+  height: 48px;
 }
 .line {
   border-bottom: 1px dashed rgb(198, 202, 204, 0.4);
@@ -165,11 +172,12 @@ const transDate = (date: string) => {
   align-items: center;
 }
 .blogListBg {
-  /* background: rgb(255, 255, 255, 0.4); */
-  /* width: 85%; */
   width: 100%;
   border-radius: 10px;
   max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .blog {
   width: 85%;
