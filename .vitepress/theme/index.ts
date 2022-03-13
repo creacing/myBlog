@@ -5,17 +5,6 @@ import About from "./components/About.vue";
 import MyLayout from "./components/MyLayout.vue";
 import "./custom.css";
 
-//引入樱花特效
-const sakura = document.createElement("script");
-sakura.type = "text/javascript";
-sakura.src = "/sakura.min.js";
-document.body.appendChild(sakura);
-//  <link rel="stylesheet" href="path/to/sakura.min.css">
-const sakuraCss = document.createElement("link");
-sakuraCss.rel = "stylesheet";
-sakuraCss.href = "/sakura.min.css";
-document.head.appendChild(sakuraCss);
-
 export default {
   ...DefaultTheme,
   Layout: MyLayout,

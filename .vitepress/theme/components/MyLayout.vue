@@ -29,28 +29,63 @@ import ToggleTheme from "./ToggleTheme.vue";
 import Category from "./Category.vue";
 import Title from "./Title.vue";
 import { useData } from "vitepress";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, onBeforeMount } from "vue";
+
+onBeforeMount(() => {
+  //背景图片渐进式加载
+
+  // var placeholder = document.querySelector(".component-placeholder"),
+  //   small = placeholder.querySelector(".component-img-small");
+
+  // // 1: load small image and show it
+  // var img = new Image();
+  // img.src = small.src;
+  // img.onload = function () {
+  //   small.classList.add("loaded");
+  // };
+
+  // // 2: load large image
+  // var imgLarge = new Image();
+  // imgLarge.src = placeholder.dataset.large;
+  // imgLarge.onload = function () {
+  //   imgLarge.classList.add("loaded");
+  // };
+  // placeholder.appendChild(imgLarge);
+
+  //引入樱花特效
+  const sakura = document.createElement("script");
+  sakura.type = "text/javascript";
+  sakura.src = "/sakura.min.js";
+  document.body.appendChild(sakura);
+  //  <link rel="stylesheet" href="path/to/sakura.min.css">
+  const sakuraCss = document.createElement("link");
+  sakuraCss.rel = "stylesheet";
+  sakuraCss.href = "/sakura.min.css";
+  document.head.appendChild(sakuraCss);
+});
 //樱花特效
 onMounted(() => {
-  const sakura = new Sakura("body", {
-    colors: [
-      {
-        gradientColorStart: "rgba(71, 69, 140, 0.9)",
-        gradientColorEnd: "rgba(101, 133, 158, 0.9)",
-        gradientColorDegree: 120,
-      },
-      {
-        gradientColorStart: "rgba(23, 23, 97)",
-        gradientColorEnd: "rgba(87, 82, 148)",
-        gradientColorDegree: 120,
-      },
-      {
-        gradientColorStart: "rgba(111, 96, 165)",
-        gradientColorEnd: "rgba(178, 178, 176)",
-        gradientColorDegree: 120,
-      },
-    ],
-  });
+  setTimeout(() => {
+    const sakura = new Sakura("body", {
+      colors: [
+        {
+          gradientColorStart: "rgba(71, 69, 140, 0.9)",
+          gradientColorEnd: "rgba(101, 133, 158, 0.9)",
+          gradientColorDegree: 120,
+        },
+        {
+          gradientColorStart: "rgba(23, 23, 97)",
+          gradientColorEnd: "rgba(87, 82, 148)",
+          gradientColorDegree: 120,
+        },
+        {
+          gradientColorStart: "rgba(111, 96, 165)",
+          gradientColorEnd: "rgba(178, 178, 176)",
+          gradientColorDegree: 120,
+        },
+      ],
+    });
+  }, 2000);
 });
 
 const isPost = computed(() => {
@@ -63,7 +98,8 @@ const isPost = computed(() => {
   height: 100vh;
   width: 100%;
   z-index: -10;
-  background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg);
+  /* background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg); */
+  background-image: url(/bgys50.jpg);
   position: fixed;
   top: 0;
   left: 0;
