@@ -1,6 +1,6 @@
 ---
 title: 禁用es-lint
-description: 禁用es-lint
+description:
 date: 2021-03-27
 tags:
   - javascript

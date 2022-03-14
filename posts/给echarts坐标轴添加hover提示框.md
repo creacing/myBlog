@@ -1,6 +1,6 @@
 ---
-title: 给echarts坐标轴添加提示框
-description: 给echarts坐标轴添加提示框
+title: 给echarts坐标轴添加hover提示框
+description:
 date: 2021-10-05
 tags:
   - echarts

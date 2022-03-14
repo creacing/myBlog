@@ -1,6 +1,6 @@
 ---
 title: Dijkstra算法是一种计算从单个源到所有其他源的最短路径的贪心算法
-description: Dijkstra算法是一种计算从单个源到所有其他源的最短路径的贪心算法
+description: 
 date:  2021-11-09
 tags:
   - 数据结构与算法

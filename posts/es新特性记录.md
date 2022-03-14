@@ -1,6 +1,6 @@
 ---
 title: es新特性记录
-description: es新特性记录
+description: 
 date: 2021-12-20
 tags:
   - javascript

@@ -1,9 +1,9 @@
 ---
-title: BST二叉搜索树实现
-description: BST二叉搜索树实现
+title: BST二叉搜索树
+description: 
 date: 2021-11-16
 tags:
-  - BFS_DFS
+  - BFS
 ---
 
 ```javascript

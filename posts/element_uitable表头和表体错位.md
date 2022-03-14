@@ -1,6 +1,6 @@
 ---
 title: chrome 下 缩放element ui 的table组件会导致表头和表体错位
-description: chrome 下 缩放element ui 的table组件会导致表头和表体错位
+description:
 date: 2021-10-19
 tags:
   - element_ui

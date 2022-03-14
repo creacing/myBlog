@@ -1,7 +1,6 @@
 <template>
   <div>
     <ShareCard />
-    <!-- <h1 class="blog-title">Blog</h1> -->
     <div class="blogList">
       <div class="blogListBg">
         <a
@@ -11,26 +10,33 @@
           :key="item"
         >
           <div class="article-short-intro">
-            <div class="title">{{ item.frontMatter.title }}</div>
+            <!-- 防止title溢出 -->
+            <div class="title">
+              {{
+                item.frontMatter.title.length > 20
+                  ? `${item.frontMatter.title.slice(0, 11)}...`
+                  : item.frontMatter.title
+              }}
+            </div>
             <div v-show="showDate" class="date">
               {{ transDate(item.frontMatter.date) }}
             </div>
           </div>
-
-          <div class="line"></div>
         </a>
       </div>
     </div>
     <div class="pagination">
+      <div @click="getPrePages" class="link">&lt;</div>
       <div
         class="link"
         :class="{ activeLink: pageCurrent === i }"
-        v-for="i in pagesNum"
+        v-for="i in pagesQueue"
         :key="i"
         @click="go(i)"
       >
         {{ i }}
       </div>
+      <div @click="getAfterPages" class="link">&gt;</div>
     </div>
   </div>
 </template>
@@ -49,13 +55,48 @@ let postsAll = theme.value.posts || [];
 // get postLength
 let postLength = theme.value.postLength;
 // get pageSize
-let pageSize = theme.value.pageSize + 4;
+let pageSize = theme.value.pageSize + 3;
+
 //  pagesNum
 let pagesNum =
   postLength % pageSize === 0
     ? postLength / pageSize
     : postLength / pageSize + 1;
+//pagesQueue当前可以看到的pages页码有哪些
+const pagesQueueValue: number[] = [];
+const pagesQueue = ref(pagesQueueValue);
+
 pagesNum = parseInt(pagesNum.toString());
+//判断pagesNum 的大小
+if (pagesNum > 5) {
+  for (let i = 0; i < 5; i++) {
+    pagesQueue.value.push(i + 1);
+  }
+} else {
+  for (let i = 0; i < pagesNum; i++) {
+    pagesQueue.value.push(i + 1);
+  }
+}
+
+const getPrePages = function () {
+  if (pagesQueue.value[0] === 1) {
+    return;
+  } else {
+    pagesQueue.value.unshift(pagesQueue.value[0] - 1);
+    pagesQueue.value.pop();
+  }
+};
+const getAfterPages = function () {
+  if (pagesNum === pagesQueue.value[pagesQueue.value.length - 1]) {
+    return;
+  }
+  if (pagesQueue.value.length === 5) {
+    pagesQueue.value.push(pagesQueue.value[pagesQueue.value.length - 1] + 1);
+    pagesQueue.value.shift();
+  } else {
+    pagesQueue.value.push(pagesQueue.value[pagesQueue.value.length - 1] + 1);
+  }
+};
 //pageCurrent
 let pageCurrent = ref(1);
 // filter index post
@@ -156,9 +197,9 @@ const transDate = (date: string) => {
   box-shadow: 0 0 10px mediumslateblue;
   height: 48px;
 }
-.line {
+/* .line {
   border-bottom: 1px dashed rgb(198, 202, 204, 0.4);
-}
+} */
 .blog-title {
   text-align: center;
   font-weight: bold;

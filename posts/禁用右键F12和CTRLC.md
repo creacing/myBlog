@@ -1,6 +1,6 @@
 ---
 title: 禁用右键F12和CTRL+C
-description: 禁用右键F12和CTRL+C
+description:
 date: 2021-11-08
 tags:
   - html
