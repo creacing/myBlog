@@ -1,6 +1,6 @@
 ---
 title: element-ui的table添加递增序号
-description: element-ui的table添加递增序号
+description: 
 date: 2021-10-27
 tags:
   - element_ui
