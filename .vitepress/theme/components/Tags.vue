@@ -1,6 +1,13 @@
 <template>
   <div class="my-tags">
-    <h1 class="tags-header">标签</h1>
+    <div class="tags-header-name">
+      <div>
+        <h1 class="tags-header">标签</h1>
+      </div>
+      <div class="total-articles-num">
+        <h1>{{ `共${articlesNum} 篇` }}</h1>
+      </div>
+    </div>
     <div class="tags">
       <span
         @click="toggleTag(key)"
@@ -52,6 +59,7 @@ import { initTags } from "../utils";
 
 const { theme } = useData();
 const data = computed(() => initTags(theme.value.posts));
+let articlesNum = theme.value.postLength;
 
 //给tags设置默认值
 const selectTagDefault: string = Object.keys(data.value)[0];
@@ -70,6 +78,12 @@ const getFontSize = (length: number) => {
 </script>
 
 <style scoped>
+.total-articles-num {
+  margin-left: 20px;
+}
+.tags-header-name {
+  display: flex;
+}
 .tags-header {
   font-weight: bold;
   padding-bottom: 14px;
@@ -141,5 +155,6 @@ const getFontSize = (length: number) => {
 }
 .content > div > div {
   background: unset;
+  box-shadow: unset;
 }
 </style>

@@ -63,5 +63,6 @@ console.log(data, "data");
 }
 .content > div > div {
   background: unset;
+  box-shadow: unset;
 }
 </style>

@@ -34,6 +34,7 @@
 
 .content>div>div {
     background: rgba(9, 23, 68, 0.6);
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.4);
 }
 
 h2,
