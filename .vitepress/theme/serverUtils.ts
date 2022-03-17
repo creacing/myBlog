@@ -30,9 +30,12 @@ function _compareDate(obj1, obj2) {
 }
 
 async function getPostMDFilePaths() {
+  //全局匹配.md文件
   let paths = await globby(["**.md"], {
     ignore: ["node_modules", "README.md"],
   });
+  // console.log('paths', paths);
+
   return paths.filter((item) => item.includes("posts/"));
 }
 

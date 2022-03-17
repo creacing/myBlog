@@ -41,6 +41,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+//进行类型推断
 interface post {
   regularPath: string;
   frontMatter: object;

@@ -107,6 +107,7 @@ const getFontSize = (length: number) => {
   color: var(--c-color);
   cursor: pointer;
   font-weight: var(--font-title2-weight);
+  /* font-size: 1rem !important; */
 }
 /* 标签  */
 .tag:hover {
