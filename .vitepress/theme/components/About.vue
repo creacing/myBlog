@@ -9,6 +9,17 @@
         <p class="about-article-head">个人介绍</p>
         <p class="about-article-body">一个专注于前端技术爱好者</p>
       </article>
+
+      <article>
+        <h3>日记</h3>
+        <h4>2022.3.15</h4>
+        <p>> 添加文章总数 > 给文章分类</p>
+        <h4>2022.3.18</h4>
+        <p>
+          > 更新文章 > 添加基础的搜索功能 (后期会扩展 Algolia 和 Elastic Search)
+          > about update
+        </p>
+      </article>
     </div>
   </div>
 </template>
@@ -20,7 +31,7 @@
   font-weight: var(--font-title2-weight);
 }
 .about-article-body {
-  font-weight: var(--font-title2-weight);
+  /* font-weight: var(--font-title2-weight); */
 }
 .side-avator {
   display: flex;
