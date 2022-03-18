@@ -1,7 +1,7 @@
- ---
-title:  Hydration completed but contains mismatches. 报错
+---
+title: Hydration completed but contains mismatches.报错
 description: 
-date: 2022-03-18
+date: 2022-3-18
 tags:
   - vue
 ---
@@ -21,7 +21,8 @@ yarn build 报 document is undefined
 
 构建项目的时候dom节点还未渲染出来就去访问document
 
-### 解决方法
+### 解决方法 
+nextTick 不可以
 ```javascript
 onBeforeMount(() => {
   (function () {
