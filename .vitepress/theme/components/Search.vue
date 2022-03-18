@@ -22,7 +22,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, nextTick } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
 
@@ -61,10 +61,29 @@ const isShowSearchDiolag = () => {
 //   "search-content",
 //   "row-space-line",
 // ];
+onBeforeMount(() => {
+  (function () {
+    document.addEventListener("click", (e) => {
+      // if (!dialogShowClassName.includes(e.target.className)) {
+      showSearchDiolag.value = false;
+      // }
+    });
+    setTimeout(() => {
+      const dialog = document.getElementsByClassName("search-dialog")[0];
+      dialog.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+      const searchBtn = document.getElementsByClassName("search-btn")[0];
+      searchBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    });
+  })();
+});
 // document.addEventListener("click", (e) => {
-//   if (!dialogShowClassName.includes(e.target.className)) {
-//     showSearchDiolag.value = false;
-//   }
+//   // if (!dialogShowClassName.includes(e.target.className)) {
+//   showSearchDiolag.value = false;
+//   // }
 // });
 // setTimeout(() => {
 //   const dialog = document.getElementsByClassName("search-dialog")[0];
