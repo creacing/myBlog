@@ -104,6 +104,17 @@ let pageCurrent = ref(1);
 postsAll = postsAll.filter((item: post) => {
   return item.regularPath.indexOf("index") < 0;
 });
+// console.log("posts", postsAll);
+//按时间排序
+postsAll.sort((a: object, b: object) => {
+  //   console.log("xx", b.frontMatter.date.split("-").join(""));
+
+  return (
+    Number(b.frontMatter.date.split("-").join("")) -
+    Number(a.frontMatter.date.split("-").join(""))
+  );
+});
+
 // pagination
 let allMap = {};
 for (let i = 0; i < pagesNum; i++) {
