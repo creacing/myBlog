@@ -6,8 +6,13 @@
       </article>
 
       <article>
-        <p class="about-article-head">个人介绍</p>
-        <p class="about-article-body">一个专注于前端技术爱好者</p>
+        <h3 class="about-article-head">个人介绍</h3>
+        <p
+          class="about-article-body"
+          style="font-size: 1rem; font-weight: 600; color: mediumslateblue"
+        >
+          一个专注于前端技术爱好者
+        </p>
       </article>
 
       <article>
@@ -18,6 +23,10 @@
         <p>
           > 更新文章 > 添加基础的搜索功能 (后期会扩展 Algolia 和 Elastic Search)
           > about update
+        </p>
+        <h4>2022.3.20</h4>
+        <p>
+          > 更新最早的文章 > 添加背景音乐"井口裕香 - さらば29"和歌词显示功能
         </p>
       </article>
     </div>

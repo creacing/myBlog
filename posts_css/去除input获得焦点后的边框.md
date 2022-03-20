@@ -7,3 +7,5 @@ tags:
 ---
 
 ### input{ outline: none }
+
+input{ outline: none }

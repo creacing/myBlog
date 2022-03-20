@@ -3,6 +3,7 @@
   <div class="mask"></div>
   <div class="nav-bar-mask"></div>
   <Search />
+  <Music />
   <Layout>
     <template #navbar-search> <ToggleTheme /></template>
     <template #page-top class="page-top">
@@ -29,6 +30,7 @@ import Page from "./Page.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 import Category from "./Category.vue";
 import Search from "./Search.vue";
+import Music from "./Music.vue";
 import Title from "./Title.vue";
 import { useData } from "vitepress";
 import { computed, onMounted, onBeforeMount } from "vue";
