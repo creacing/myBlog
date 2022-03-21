@@ -6,15 +6,18 @@
       </article>
 
       <article>
-        <h3 class="about-article-head">个人介绍</h3>
+        <h3 class="about-article-head">一个专注于 javascript 的技术爱好者</h3>
+        <!-- <h3 class="about-article-head">个人介绍</h3> -->
         <!-- <h3>个人介绍</h3> -->
-        <p class="about-article-body" style="font-size: 1rem; font-weight: 600">
+        <!-- <p class="about-article-body" style="font-size: 1rem; font-weight: 600">
           一个专注于 javascript 的技术爱好者
-        </p>
+        </p> -->
         <!-- <p>一个专注于 javascript 的技术爱好者</p> -->
       </article>
 
       <article>
+        <h3>博客地址</h3>
+        <h4><a>https://github.com/creacing/myBlog</a></h4>
         <h3>日记</h3>
         <h4>2022.3.15</h4>
         <p>> 添加文章总数 > 给文章分类</p>
