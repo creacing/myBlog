@@ -107,6 +107,8 @@ const isPost = computed(() => {
   position: fixed;
   top: 0;
   left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 1200px) {

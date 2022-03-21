@@ -2,7 +2,7 @@
   <div class="bg-music-component">
     <div class="music-name">井口裕香 - さらば29</div>
     <div class="music-lyric" v-html="currentLyric"></div>
-    <audio class="bg-music" src="/井口裕香 - さらば29.mp3">
+    <audio class="bg-music" src="/井口裕香 - さらば29.mp3" loop="loop">
       井口裕香 - さらば29.mp3
     </audio>
     <div class="playIcon" v-show="musicON" @click="playMusic">⏸️</div>
