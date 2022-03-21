@@ -7,12 +7,11 @@
 
       <article>
         <h3 class="about-article-head">个人介绍</h3>
-        <p
-          class="about-article-body"
-          style="font-size: 1rem; font-weight: 600; color: mediumslateblue"
-        >
-          一个专注于前端技术爱好者
+        <!-- <h3>个人介绍</h3> -->
+        <p class="about-article-body" style="font-size: 1rem; font-weight: 600">
+          一个专注于 javascript 的技术爱好者
         </p>
+        <!-- <p>一个专注于 javascript 的技术爱好者</p> -->
       </article>
 
       <article>
