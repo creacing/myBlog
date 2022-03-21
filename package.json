@@ -14,7 +14,8 @@
     "scripts": {
         "dev": "vitepress dev ",
         "build": "vitepress build ",
-        "serve": "vitepress serve "
+        "serve": "vitepress serve ",
+        "deploy": "git add * && git commit -m 'articles' && git push "
     },
     "dependencies": {
         "dayjs": "^1.10.7",
