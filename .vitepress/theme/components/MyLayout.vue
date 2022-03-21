@@ -2,6 +2,7 @@
   <div class="cover"></div>
   <div class="mask"></div>
   <div class="nav-bar-mask"></div>
+  <Flower class="flower" />
   <Search />
   <Music />
   <Layout>
@@ -32,6 +33,7 @@ import Category from "./Category.vue";
 import Search from "./Search.vue";
 import Music from "./Music.vue";
 import Title from "./Title.vue";
+import Flower from "./Flower.vue";
 import { useData } from "vitepress";
 import { computed, onMounted, onBeforeMount } from "vue";
 
