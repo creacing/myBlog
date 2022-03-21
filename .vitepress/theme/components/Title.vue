@@ -1,6 +1,6 @@
 <template>
   <h1 class="title">{{ title }}</h1>
-  <div class="date">🕒 lastUpdated: {{ date }}</div>
+  <div class="date">⏲️ lastUpdated: {{ date }}</div>
 </template>
 <script lang="ts" setup>
 import { useData } from "vitepress";

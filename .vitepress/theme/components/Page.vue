@@ -26,13 +26,11 @@
                 item.frontMatter.tags && item.frontMatter.tags.join(" ")
               }}
             </div>
-            <!-- <div class="bttons article-short-intro-el">
-              <button>阅读全文</button>
-              <button>按钮一</button>
-              <button>按钮二</button>
-            </div> -->
             <div class="date article-short-intro-el">
-              {{ transDate(item.frontMatter.date) }}
+              <div>
+                {{ transDate(item.frontMatter.date) }}
+              </div>
+              <button class="read-more">阅读全文</button>
             </div>
           </div>
 
@@ -211,6 +209,12 @@ const transDate = (date: string) => {
 </script>
 
 <style scoped>
+.read-more {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0;
+  display: block;
+  padding: 3px;
+}
 .article-short-intro-el {
   padding-bottom: 20px;
 }
@@ -264,6 +268,9 @@ const transDate = (date: string) => {
   color: var(--c-color);
 }
 .date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-size: 1.2em;
   font-weight: bold;
   color: var(--c-color);
