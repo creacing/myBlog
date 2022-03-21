@@ -12,15 +12,19 @@
           <div class="article-short-intro">
             <!-- 防止title溢出 -->
             <div class="title article-short-intro-el">
-              {{ item.frontMatter.title }}
-              <!-- {{
-                item.frontMatter.title.length > 20
-                  ? `${item.frontMatter.title.slice(0, 11)}...`
+              {{
+                screenWidth < 400
+                  ? `${
+                      item.frontMatter.title &&
+                      item.frontMatter.title.substring(0, 11)
+                    }...`
                   : item.frontMatter.title
-              }} -->
+              }}
             </div>
             <div class="tags article-short-intro-el">
-              🏷️&nbsp;{{ item.frontMatter.tags.join(" ") }}
+              🏷️&nbsp;{{
+                item.frontMatter.tags && item.frontMatter.tags.join(" ")
+              }}
             </div>
             <!-- <div class="bttons article-short-intro-el">
               <button>阅读全文</button>
@@ -28,7 +32,6 @@
               <button>按钮二</button>
             </div> -->
             <div class="date article-short-intro-el">
-              <!-- <div v-show="showDate" class="date article-short-intro-el"> -->
               {{ transDate(item.frontMatter.date) }}
             </div>
           </div>
@@ -62,8 +65,10 @@ import { onMounted, ref, reactive } from "vue";
 import ShareCard from "./ShareCard.vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
-
-const showDate = window.screen.width > 600 ? true : false;
+let screenWidth = ref(0);
+onMounted(() => {
+  screenWidth.value = screen.width;
+});
 // get posts
 let postsAll = theme.value.posts || [];
 // get postLength
@@ -117,11 +122,8 @@ let pageCurrent = ref(1);
 postsAll = postsAll.filter((item: post) => {
   return item.regularPath.indexOf("index") < 0;
 });
-// console.log("posts", postsAll);
 //按时间排序
 postsAll.sort((a: object, b: object) => {
-  //   console.log("xx", b.frontMatter.date.split("-").join(""));
-
   return (
     Number(b.frontMatter.date.split("-").join("")) -
     Number(a.frontMatter.date.split("-").join(""))
@@ -223,19 +225,7 @@ const transDate = (date: string) => {
 .article-short-intro {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* padding: 10px; */
-
-  /* border: 1px solid #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px mediumslateblue; */
-  /* height: 48px; */
-  /* width: 800px;
-  height: 100px; */
 }
-/* .line {
-  border-bottom: 1px dashed rgb(198, 202, 204, 0.4);
-} */
 .blog-title {
   text-align: center;
   font-weight: bold;
@@ -262,14 +252,7 @@ const transDate = (date: string) => {
   display: block;
   border-radius: 10px;
   padding: 0 20px;
-  /* margin: 10px; */
-  /* background: var(--c-bg); */
-  /* max-width: 600px; */
-  /* max-width: 700px; */
-  /* box-shadow: 6px 6px var(--c-brand);
-  border: 4px solid #282936; */
   cursor: pointer;
-  /* color: var(-c-color); */
 }
 .blog:hover {
   text-decoration: none;
@@ -302,21 +285,17 @@ const transDate = (date: string) => {
   height: 2rem;
   line-height: 2rem;
   text-align: center;
-  /* border: 1px solid #282936; */
   cursor: pointer;
-  /* border-right: none; */
   transition: 0.2s;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .link:last-child {
-  /* border-right: 1px solid #282936; */
 }
 .link:hover {
   transform: translate(-1px, -1px);
 }
 .activeLink {
-  /* background-color: var(--c-brand); */
   background-color: mediumslateblue;
   color: white;
 }

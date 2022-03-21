@@ -55,6 +55,22 @@ const hignLight = () => {};
   width: 20px;
   height: 20px; */
 }
+@media (max-width: 1100px) {
+  .bg-music-component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 1000;
+    color: var(--c-color);
+    font-weight: var(--font-title2-weight);
+  }
+  .music-lyric {
+    display: none;
+  }
+}
 audio {
   /* z-index: 1000; */
   height: 30px;
