@@ -11,17 +11,29 @@
         >
           <div class="article-short-intro">
             <!-- 防止title溢出 -->
-            <div class="title">
-              {{
+            <div class="title article-short-intro-el">
+              {{ item.frontMatter.title }}
+              <!-- {{
                 item.frontMatter.title.length > 20
                   ? `${item.frontMatter.title.slice(0, 11)}...`
                   : item.frontMatter.title
-              }}
+              }} -->
             </div>
-            <div v-show="showDate" class="date">
+            <div class="tags article-short-intro-el">
+              🏷️&nbsp;{{ item.frontMatter.tags.join(" ") }}
+            </div>
+            <!-- <div class="bttons article-short-intro-el">
+              <button>阅读全文</button>
+              <button>按钮一</button>
+              <button>按钮二</button>
+            </div> -->
+            <div class="date article-short-intro-el">
+              <!-- <div v-show="showDate" class="date article-short-intro-el"> -->
               {{ transDate(item.frontMatter.date) }}
             </div>
           </div>
+
+          <div class="blog-hr"></div>
         </a>
       </div>
     </div>
@@ -50,6 +62,7 @@ import { onMounted, ref, reactive } from "vue";
 import ShareCard from "./ShareCard.vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
+
 const showDate = window.screen.width > 600 ? true : false;
 // get posts
 let postsAll = theme.value.posts || [];
@@ -196,18 +209,29 @@ const transDate = (date: string) => {
 </script>
 
 <style scoped>
+.article-short-intro-el {
+  padding-bottom: 20px;
+}
+
+.blog-hr {
+  border-bottom: 2px solid rgb(123, 104, 238, 0.3);
+  /* margin-top: 10px; */
+}
 .article-short-intro :hover {
   color: mediumslateblue;
 }
 .article-short-intro {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* padding: 10px; */
 
-  border: 1px solid #fff;
+  /* border: 1px solid #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px mediumslateblue;
-  height: 48px;
+  box-shadow: 0 0 10px mediumslateblue; */
+  /* height: 48px; */
+  /* width: 800px;
+  height: 100px; */
 }
 /* .line {
   border-bottom: 1px dashed rgb(198, 202, 204, 0.4);
@@ -218,7 +242,7 @@ const transDate = (date: string) => {
 }
 .blogList {
   padding: 30px 0;
-  padding-bottom: 120px;
+  padding-bottom: 130px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -227,20 +251,21 @@ const transDate = (date: string) => {
 .blogListBg {
   width: 100%;
   border-radius: 10px;
-  max-width: 700px;
+  max-width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .blog {
+  height: 160px;
   width: 85%;
   display: block;
   border-radius: 10px;
   padding: 0 20px;
-  margin: 10px;
+  /* margin: 10px; */
   /* background: var(--c-bg); */
   /* max-width: 600px; */
-  max-width: 700px;
+  /* max-width: 700px; */
   /* box-shadow: 6px 6px var(--c-brand);
   border: 4px solid #282936; */
   cursor: pointer;
@@ -258,6 +283,9 @@ const transDate = (date: string) => {
 .date {
   font-size: 1.2em;
   font-weight: bold;
+  color: var(--c-color);
+}
+.tags {
   color: var(--c-color);
 }
 .pagination {

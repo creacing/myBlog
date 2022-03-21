@@ -121,6 +121,7 @@ const isPost = computed(() => {
     top: 0;
     left: 0;
     background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 .mask {

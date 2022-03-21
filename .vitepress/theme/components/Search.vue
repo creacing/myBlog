@@ -144,13 +144,15 @@ onBeforeMount(() => {
   padding: 0;
   overflow: auto;
 }
-
+/* 滚动条的宽度 */
 ::-webkit-scrollbar {
   width: 5px;
 }
+/* 滚动条的按钮 */
 ::-webkit-scrollbar-button {
   display: none;
 }
+/* 滚动条的滑块 */
 ::-webkit-scrollbar-thumb {
   background-color: grey;
   border-radius: 5px;

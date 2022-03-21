@@ -1,19 +1,13 @@
 <template>
   <div class="shareCard">
-    <h1>
-      <!-- <span class="home-title-large">🌟我本世间远行客，幸得风雨同舟人。</span> -->
+    <div class="share-poetrys">
       <span class="home-title-large">{{ poetry }}</span>
-
-      <div class="home-title-small">
-        {{ poetry }}
-        <!-- <p>我本世间远行客</p>
-        <p>幸得风雨同舟人</p> -->
-      </div>
-    </h1>
-    <p class="shortIntro">一个专注于前端技术爱好者</p>
+      <span class="home-title-small">{{ poetry }}</span>
+    </div>
+    <!-- <p class="shortIntro">一个专注于前端技术爱好者</p> -->
     <div class="cardPart">
       <div class="card" v-for="item in list" @click="go(item)" :key="item">
-        <svg
+        <!-- <svg
           t="1641801440748"
           class="icon"
           viewBox="0 0 1024 1024"
@@ -24,7 +18,7 @@
           height="30"
         >
           <path :d="item.icon" fill="var(--c-brand)"></path>
-        </svg>
+        </svg> -->
       </div>
     </div>
   </div>
@@ -87,10 +81,21 @@ const go = (item: card) => {
 };
 </script>
 <style scoped>
+.share-poetrys {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
 @media (max-width: 1100px) {
-  .home-title-large {
+  .share-poetrys {
     display: none;
   }
+  /* .home-title-large {
+    display: none;
+  } */
 }
 @media (min-width: 1100px) {
   .home-title-small {
