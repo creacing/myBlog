@@ -30,7 +30,9 @@
               <div>
                 {{ transDate(item.frontMatter.date) }}
               </div>
-              <button class="read-more">阅读全文</button>
+              <button class="read-more" v-show="screenWidth > 400">
+                阅读全文
+              </button>
             </div>
           </div>
 
