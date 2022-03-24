@@ -7,12 +7,6 @@
 
       <article>
         <h3 class="about-article-head">一个专注于 javascript 的技术爱好者</h3>
-        <!-- <h3 class="about-article-head">个人介绍</h3> -->
-        <!-- <h3>个人介绍</h3> -->
-        <!-- <p class="about-article-body" style="font-size: 1rem; font-weight: 600">
-          一个专注于 javascript 的技术爱好者
-        </p> -->
-        <!-- <p>一个专注于 javascript 的技术爱好者</p> -->
       </article>
 
       <article>
@@ -32,9 +26,9 @@
         </p>
         <h4>2022.3.21</h4>
         <p>> 更新文章 > 滚动条样式 > 动画背景特效</p>
+        <h4>2022.3.22</h4>
+        <p>> 更新文章</p>
       </article>
-      <h4>2022.3.22</h4>
-      <p>> 更新文章</p>
     </div>
   </div>
 </template>
@@ -44,9 +38,6 @@
 .about-article-head {
   font-size: var(--font-title2-size);
   font-weight: var(--font-title2-weight);
-}
-.about-article-body {
-  /* font-weight: var(--font-title2-weight); */
 }
 .side-avator {
   display: flex;

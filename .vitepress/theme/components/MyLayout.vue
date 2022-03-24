@@ -1,10 +1,17 @@
 <template>
+  <!-- cover: 背景图片 -->
   <div class="cover"></div>
+  <!-- mask 背景图片上方的遮罩 -->
   <div class="mask"></div>
+  <!-- nav-bar-mask 导航栏的遮罩 -->
   <div class="nav-bar-mask"></div>
+  <!-- 背景的花朵 -->
   <Flower class="flower" />
+  <!-- 搜索功能 -->
   <Search />
+  <!-- 音乐播放功能 -->
   <Music />
+  <!-- 默认布局 #navbar-search表示v-slot:'navbar-search'-->
   <Layout>
     <template #navbar-search> <ToggleTheme /></template>
     <template #page-top class="page-top">
