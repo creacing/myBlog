@@ -1,21 +1,24 @@
 <template>
-  <div style="padding-top: 10px">
-    <div v-for="yearList in data" class="yearItem" :key="yearList">
-      <div class="year">
-        {{ yearList[0].frontMatter.date.split("-")[0] }}
-      </div>
-      <a
-        :href="withBase(article.regularPath)"
-        v-for="(article, index) in yearList"
-        :key="index"
-        class="article"
-      >
-        <div class="title">
-          <div class="title-o"></div>
-          {{ article.frontMatter.title }}
+  <div>
+    <!-- <div class="archives-sidebar"></div> -->
+    <div style="padding-top: 10px">
+      <div v-for="yearList in data" class="yearItem" :key="yearList">
+        <div class="year">
+          {{ yearList[0].frontMatter.date.split("-")[0] }}
         </div>
-        <div class="date">{{ article.frontMatter.date.slice(5) }}</div>
-      </a>
+        <a
+          :href="withBase(article.regularPath)"
+          v-for="(article, index) in yearList"
+          :key="index"
+          class="article"
+        >
+          <div class="title">
+            <div class="title-o"></div>
+            {{ article.frontMatter.title }}
+          </div>
+          <div class="date">{{ article.frontMatter.date.slice(5) }}</div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +34,15 @@ console.log(data, "data");
 </script>
 
 <style scoped>
+/* .archives-sidebar {
+  width: 200px;
+  position: fixed;
+  height: 400px;
+  border: 1px solid black;
+  top: 50%;
+  left: 30px;
+  transform: translate(0, -50%);
+} */
 .yearItem {
   border-bottom: 1px dashed #c7c7c7;
 }

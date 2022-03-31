@@ -38,18 +38,20 @@
         ></path></svg
       ><span class="header-text">{{ selectTag }}</span>
     </h4>
-    <a
-      :href="withBase(article.regularPath)"
-      v-for="(article, index) in data[selectTag]"
-      :key="index"
-      class="article"
-    >
-      <div class="title">
-        <div class="title-o"></div>
-        {{ article.frontMatter.title }}
-      </div>
-      <div class="date">{{ article.frontMatter.date }}</div>
-    </a>
+    <div class="tag-intro">
+      <a
+        :href="withBase(article.regularPath)"
+        v-for="(article, index) in data[selectTag]"
+        :key="index"
+        class="article"
+      >
+        <div class="title">
+          <div class="title-o"></div>
+          {{ article.frontMatter.title }}
+        </div>
+        <div class="date">{{ article.frontMatter.date }}</div>
+      </a>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -157,5 +159,9 @@ const getFontSize = (length: number) => {
 .content > div > div {
   background: unset;
   box-shadow: unset;
+}
+.tag-intro {
+  height: 53vh;
+  overflow: auto;
 }
 </style>

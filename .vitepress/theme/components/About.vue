@@ -7,9 +7,10 @@
 
       <article>
         <h3 class="about-article-head">一个专注于 javascript 的技术爱好者</h3>
+        <!-- <h3 class="about-article-head">知道的越多恐惧的越少。</h3> -->
       </article>
 
-      <article>
+      <article class="about-body-article">
         <h3>博客地址</h3>
         <br />
         <h4><a>https://github.com/creacing/myBlog</a></h4>
@@ -35,6 +36,10 @@
         <p>> 更新文章</p>
         <h4>2022.3.25</h4>
         <p>> 修复滚动条溢出bug</p>
+        <h4>2022.3.27</h4>
+        <p>> 修复页面溢出</p>
+        <h4>2022.3.30</h4>
+        <p>> 追番记录</p>
       </article>
     </div>
   </div>
@@ -42,6 +47,10 @@
 <script lang="ts" setup>
 </script>
 <style scoped>
+.about-body-article {
+  height: 56vh;
+  overflow: auto;
+}
 .about-article-head {
   font-size: var(--font-title2-size);
   font-weight: var(--font-title2-weight);

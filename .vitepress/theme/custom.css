@@ -96,3 +96,22 @@ header {
 body {
     overflow: scroll;
 }
+
+
+/* 首页高度不溢出 */
+
+.home>div:nth-child(3) {
+    /* background-color: black; */
+    height: 85vh;
+    overflow: auto;
+}
+
+.container {
+    height: 90vh;
+    overflow: auto;
+    padding-bottom: 24px !important;
+}
+
+.page-footer {
+    display: none !important;
+}
