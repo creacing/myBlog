@@ -98,7 +98,7 @@ const getFontSize = (length: number) => {
   justify-content: left;
   border-bottom: 1px dashed #c7c7c7;
   margin-bottom: 10px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 .tag {
   display: inline-block;
@@ -161,7 +161,7 @@ const getFontSize = (length: number) => {
   box-shadow: unset;
 }
 .tag-intro {
-  height: 53vh;
+  height: 60vh;
   overflow: auto;
 }
 </style>

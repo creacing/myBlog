@@ -1,24 +1,23 @@
 <template>
-  <div class="aboutPage">
-    <div class="about">
+  <div class="about">
+    <div class="aboutPage">
       <article>
         <h2><p class="about-header">欢迎来到😱七夜许愿星😱的个人小站</p></h2>
       </article>
 
-      <article>
-        <h3 class="about-article-head">一个专注于 javascript 的技术爱好者</h3>
+      <article style="margin: 0">
+        <h3 class="about-article-head" style="margin-top: 0">
+          一个专注于 javascript 的技术爱好者
+        </h3>
         <!-- <h3 class="about-article-head">知道的越多恐惧的越少。</h3> -->
       </article>
 
       <article class="about-body-article">
-        <h3>博客地址</h3>
-        <br />
+        <h3 class="about-title">博客地址</h3>
         <h4><a>https://github.com/creacing/myBlog</a></h4>
-        <h3>高清背景图</h3>
-        <br />
+        <h3 class="about-title">高清背景图</h3>
         <h4><a>https://jsui.fun/bg.jpg</a></h4>
-
-        <h3>日记</h3>
+        <h3 class="about-title">日记</h3>
         <h4>2022.3.15</h4>
         <p>> 添加文章总数 > 给文章分类</p>
         <h4>2022.3.18</h4>
@@ -47,10 +46,13 @@
 <script lang="ts" setup>
 </script>
 <style scoped>
-.about-body-article {
+.about-title {
+  margin: 10px 0;
+}
+/* .about-body-article {
   height: 56vh;
   overflow: auto;
-}
+} */
 .about-article-head {
   font-size: var(--font-title2-size);
   font-weight: var(--font-title2-weight);
@@ -69,13 +71,13 @@
   display: block;
   text-align: center;
 }
-.about {
+.aboutPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
 }
-.aboutPage {
+.about {
   display: flex;
   justify-content: center;
 }

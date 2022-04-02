@@ -32,6 +32,10 @@
     position: relative;
 }
 
+.content {
+    padding-bottom: 0 !important;
+}
+
 .content>div>div {
     background: rgba(9, 23, 68, 0.6);
     box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.4);
@@ -110,6 +114,7 @@ body {
     height: 90vh;
     overflow: auto;
     padding-bottom: 24px !important;
+    padding-bottom: 0 !important;
 }
 
 .page-footer {
