@@ -9,7 +9,6 @@
         <h3 class="about-article-head" style="margin-top: 0">
           一个专注于 javascript 的技术爱好者
         </h3>
-        <!-- <h3 class="about-article-head">知道的越多恐惧的越少。</h3> -->
       </article>
 
       <article class="about-body-article">
@@ -39,6 +38,8 @@
         <p>> 修复页面溢出</p>
         <h4>2022.3.30</h4>
         <p>> 追番记录</p>
+        <h4>2022.4.7</h4>
+        <p>> 分页改造 > tags样式修改</p>
       </article>
     </div>
   </div>

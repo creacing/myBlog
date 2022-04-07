@@ -31,7 +31,7 @@
   /* background: pink; */
   /* background: rgba(123, 104, 236, 0.7); */
   background: rgb(173, 175, 224, 0.7);
-  opacity: 0.3.4;
+  opacity: 0.3;
   width: 300px;
   height: 300px;
   border-radius: 300px 0px;
@@ -39,6 +39,14 @@
   transform-origin: 0px 300px;
   /* 逆时针旋转45度 */
   transform: rotate(-45deg);
+}
+@media (max-width: 1000px) {
+  .petal {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px 0px;
+    transform-origin: 0px 150px;
+  }
 }
 .div1 {
   /* z-index: -1; */

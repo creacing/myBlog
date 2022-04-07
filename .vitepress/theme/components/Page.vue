@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="pagination">
-      <div @click="getPrePages" class="link">&lt;</div>
+      <div @click="getPrePages" class="link" v-show="pagesNum > 5">&lt;</div>
       <div
         class="link"
         :class="{ activeLink: pageCurrent === i }"
@@ -51,7 +51,7 @@
       >
         {{ i }}
       </div>
-      <div @click="getAfterPages" class="link">&gt;</div>
+      <div @click="getAfterPages" class="link" v-show="pagesNum > 5">&gt;</div>
     </div>
   </div>
 </template>
@@ -76,7 +76,7 @@ let postLength = theme.value.postLength;
 // get pageSize
 let pageSize = theme.value.pageSize + 3;
 
-//  pagesNum
+//pagesNum指共的页数
 let pagesNum =
   postLength % pageSize === 0
     ? postLength / pageSize
@@ -86,7 +86,7 @@ const pagesQueueValue: number[] = [];
 const pagesQueue = ref(pagesQueueValue);
 
 pagesNum = parseInt(pagesNum.toString());
-//判断pagesNum 的大小
+//初始化pageQueue
 if (pagesNum > 5) {
   for (let i = 0; i < 5; i++) {
     pagesQueue.value.push(i + 1);
@@ -96,26 +96,46 @@ if (pagesNum > 5) {
     pagesQueue.value.push(i + 1);
   }
 }
-
+/***需求 页面导航每次显示五个页面 ***/
+/***数据结构 队列 ***/
+//获取前面的页数
 const getPrePages = function () {
-  if (pagesQueue.value[0] === 1) {
+  //页面队列的第一个值减去五小于1就返回
+  if (pagesQueue.value[0] - 5 < 1) {
     return;
   } else {
-    pagesQueue.value.unshift(pagesQueue.value[0] - 1);
-    pagesQueue.value.pop();
+    //获取页面队列的第一个值
+    const startPageValue = pagesQueue.value[0];
+    //清空队列
+    pagesQueue.value.splice(0);
+    //填充较小的五个值
+    for (let k = startPageValue - 1; k >= startPageValue - 5; k--) {
+      pagesQueue.value.unshift(k);
+    }
   }
 };
+//获取后面的页数
 const getAfterPages = function () {
+  //最后一页的页码与总共的页数相等就返回
   if (pagesNum === pagesQueue.value[pagesQueue.value.length - 1]) {
     return;
   }
-  if (pagesQueue.value.length === 5) {
-    pagesQueue.value.push(pagesQueue.value[pagesQueue.value.length - 1] + 1);
-    pagesQueue.value.shift();
+  //下一个队列的开始值
+  const startPageValue = pagesQueue.value[pagesQueue.value.length - 1] + 1;
+  //清空队列
+  pagesQueue.value.splice(0);
+  //下下个个队列的开始值是否小于等于pagesNum 符合就加五个 不符合就剩下的全部加入
+  if (startPageValue + 5 <= pagesNum) {
+    for (let k = startPageValue; k < startPageValue + 5; k++) {
+      pagesQueue.value.push(k);
+    }
   } else {
-    pagesQueue.value.push(pagesQueue.value[pagesQueue.value.length - 1] + 1);
+    for (let k = startPageValue; k < pagesNum; k++) {
+      pagesQueue.value.push(k);
+    }
   }
 };
+
 //pageCurrent
 let pageCurrent = ref(1);
 // filter index post

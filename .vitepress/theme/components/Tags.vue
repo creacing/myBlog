@@ -5,7 +5,7 @@
         <h1 class="tags-header">标签</h1>
       </div>
       <div class="total-articles-num">
-        <h1>{{ `共${articlesNum} 篇` }}</h1>
+        <h1>{{ `共${articlesNum - 5} 篇` }}</h1>
       </div>
     </div>
     <div class="tags">
@@ -165,8 +165,8 @@ const getFontSize = (length: number) => {
   box-shadow: unset;
 }
 .tag-intro {
-  height: 60vh;
-  overflow: auto;
+  /* height: 60vh;
+  overflow: auto; */
   /* background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 10px;
