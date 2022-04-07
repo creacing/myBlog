@@ -74,7 +74,9 @@ header {
 /* 滚动条的宽度 */
 
 ::-webkit-scrollbar {
+    /* 纵向滚动条 */
     width: 0;
+    /* 横向滚动条 */
     height: 5px;
 }
 

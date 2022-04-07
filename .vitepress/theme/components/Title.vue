@@ -37,7 +37,7 @@ const date = dayjs().to(dayjs(lastUpdated));
   line-height: 1.25rem;
   margin-bottom: 1em;
   padding-bottom: 1em;
-  border-bottom: 1px dashed #c7c7c7;
+  border-bottom: 1px dashed mediumslateblue;
   color: var(--c-color);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <div class="archives-sidebar"></div> -->
-    <div style="padding-top: 10px">
+    <div style="padding-top: 10px" class="archives-page">
       <div v-for="yearList in data" class="yearItem" :key="yearList">
         <div class="year">
           {{ yearList[0].frontMatter.date.split("-")[0] }}
@@ -43,8 +43,15 @@ console.log(data, "data");
   left: 30px;
   transform: translate(0, -50%);
 } */
+.archives-page {
+  /* margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 4px 4px 12px 2px rgba(123, 104, 238, 0.2); */
+}
 .yearItem {
-  border-bottom: 1px dashed #c7c7c7;
+  border-bottom: 1px dashed mediumslateblue;
 }
 .yearItem:last-child {
   border: none;

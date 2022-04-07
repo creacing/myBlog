@@ -96,9 +96,13 @@ const getFontSize = (length: number) => {
   flex-wrap: wrap;
   align-items: center;
   justify-content: left;
-  border-bottom: 1px dashed #c7c7c7;
+  border-bottom: 1px dashed mediumslateblue;
   margin-bottom: 10px;
   /* padding-bottom: 20px; */
+  /* background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 4px 4px 12px 2px rgba(123, 104, 238, 0.2); */
 }
 .tag {
   display: inline-block;
@@ -163,5 +167,9 @@ const getFontSize = (length: number) => {
 .tag-intro {
   height: 60vh;
   overflow: auto;
+  /* background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 4px 4px 12px 2px rgba(123, 104, 238, 0.2); */
 }
 </style>

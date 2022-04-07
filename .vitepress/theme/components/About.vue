@@ -76,6 +76,10 @@
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  /* background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 4px 4px 12px 2px rgba(123, 104, 238, 0.2); */
 }
 .about {
   display: flex;
