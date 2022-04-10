@@ -5,8 +5,10 @@
   <div class="mask"></div>
   <!-- nav-bar-mask 导航栏的遮罩 -->
   <div class="nav-bar-mask"></div>
-  <!-- 背景的花朵 -->
-  <Flower class="flower" />
+  <!-- 背景的花朵 需要重新写-->
+  <!-- <Flower class="flower" /> -->
+  <!-- 背景蝴蝶 -->
+  <Butterfly class="butterfly" />
   <!-- 搜索功能 -->
   <Search />
   <!-- 音乐播放功能 -->
@@ -41,6 +43,7 @@ import Search from "./Search.vue";
 import Music from "./Music.vue";
 import Title from "./Title.vue";
 import Flower from "./Flower.vue";
+import Butterfly from "./Butterfly.vue";
 import { useData } from "vitepress";
 import { computed, onMounted, onBeforeMount } from "vue";
 
