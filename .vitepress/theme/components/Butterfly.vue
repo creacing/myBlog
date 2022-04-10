@@ -21,7 +21,7 @@
       >
         <!-- https://www.screentogif.com/ 制作gif -->
         <image
-          xlink:href="butterfly.jpg"
+          xlink:href="./../utils/butterfly.jpg"
           width="100"
           height="100"
           preserveAspectRatio="none"
