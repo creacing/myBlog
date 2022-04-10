@@ -1,4 +1,6 @@
 <template>
+  <!-- share card -->
+  <SharePoetrys v-show="showSharePoetrys" />
   <!-- cover: 背景图片 -->
   <div class="cover"></div>
   <!-- mask 背景图片上方的遮罩 -->
@@ -12,7 +14,7 @@
   <!-- 搜索功能 -->
   <Search />
   <!-- 音乐播放功能 -->
-  <Music />
+  <Music @play="play" />
   <!-- 默认布局 #navbar-search表示v-slot:'navbar-search'-->
   <Layout>
     <template #navbar-search> <ToggleTheme /></template>
@@ -44,9 +46,15 @@ import Music from "./Music.vue";
 import Title from "./Title.vue";
 import Flower from "./Flower.vue";
 import Butterfly from "./Butterfly.vue";
-import { useData } from "vitepress";
-import { computed, onMounted, onBeforeMount } from "vue";
+import SharePoetrys from "./SharePoetrys.vue";
 
+import { useData } from "vitepress";
+import { computed, onMounted, onBeforeMount, ref } from "vue";
+//显示诗句组件
+const showSharePoetrys: Boolean = ref(true);
+const play = () => {
+  showSharePoetrys.value = false;
+};
 onBeforeMount(() => {
   //背景图片渐进式加载
 

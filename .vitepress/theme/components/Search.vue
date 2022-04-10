@@ -5,11 +5,11 @@
     <div class="search-dialog" v-show="showSearchDiolag">
       <div>
         <input v-model="inputValue" class="search-input-text" type="text" />
-        <button @click="searchForValue" class="search-input-btn">search</button>
+        <button @click="searchForValue" class="search-input-btn">搜索</button>
       </div>
 
       <ul class="search-list">
-        <li v-for="item in searchRes" :key="item">
+        <li v-for="item in searchRes" :key="item" class="search-list-item">
           <div class="search-content">
             <a :href="withBase(item.regularPath)" @click="goToArticle">{{
               item.frontMatter.title
@@ -52,21 +52,11 @@ const isShowSearchDiolag = () => {
   console.log("isShowSearchDiolag");
   showSearchDiolag.value = !showSearchDiolag.value;
 };
-// const dialogShowClassName = [
-//   "search-btn",
-//   "search-dialog",
-//   "search-input-text",
-//   "search-input-btn",
-//   "search-list",
-//   "search-content",
-//   "row-space-line",
-// ];
+
 onBeforeMount(() => {
   (function () {
     document.addEventListener("click", (e) => {
-      // if (!dialogShowClassName.includes(e.target.className)) {
       showSearchDiolag.value = false;
-      // }
     });
     setTimeout(() => {
       const dialog = document.getElementsByClassName("search-dialog")[0];
@@ -80,21 +70,6 @@ onBeforeMount(() => {
     });
   })();
 });
-// document.addEventListener("click", (e) => {
-//   // if (!dialogShowClassName.includes(e.target.className)) {
-//   showSearchDiolag.value = false;
-//   // }
-// });
-// setTimeout(() => {
-//   const dialog = document.getElementsByClassName("search-dialog")[0];
-//   dialog.addEventListener("click", (e) => {
-//     e.stopPropagation();
-//   });
-//   const searchBtn = document.getElementsByClassName("search-btn")[0];
-//   searchBtn.addEventListener("click", (e) => {
-//     e.stopPropagation();
-//   });
-// });
 </script>
 <style scoped>
 .row-space-line {
@@ -118,7 +93,8 @@ onBeforeMount(() => {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  background-color: rgba(238, 237, 240, 0.9);
 }
 .search-input-text {
   width: 520px;
@@ -143,6 +119,13 @@ onBeforeMount(() => {
   list-style: none;
   padding: 0;
   overflow: auto;
+}
+.search-content > a {
+  text-decoration: none;
+  color: black;
+}
+.search-content > a:hover {
+  color: mediumslateblue;
 }
 /* 滚动条的宽度 */
 ::-webkit-scrollbar {

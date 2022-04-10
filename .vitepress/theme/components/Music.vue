@@ -1,7 +1,19 @@
 <template>
   <div class="bg-music-component">
-    <div class="music-name">井口裕香 - さらば29</div>
-    <div class="music-lyric" v-html="currentLyric"></div>
+    <div class="music-name" v-show="currentLyric === '歌词'">
+      井口裕香 - さらば29
+    </div>
+    &nbsp;
+    <div
+      class="music-lyric"
+      v-html="
+        `${currentLyric.split('<br/>')[0]}${
+          currentLyric.split('<br/>')[1]
+            ? ' , ' + currentLyric.split('<br/>')[1]
+            : ''
+        }`
+      "
+    ></div>
     <audio class="bg-music" src="/井口裕香 - さらば29.mp3" loop="loop">
       井口裕香 - さらば29.mp3
     </audio>
@@ -11,21 +23,28 @@
 </template>
 
 <script lang="ts" setup>
+import { Content } from "vitepress";
 import { onMounted, ref } from "vue";
 import { parseLyric, timeZone } from "../utils/parseLyric";
 let musicON = ref(false);
+//子传父
+const emits = defineEmits(["play"]);
 
 const playMusic = () => {
+  emits("handlePlay");
   musicON.value = !musicON.value;
   const audio = document.getElementsByClassName("bg-music")[0];
   if (audio.paused) {
+    emits("play", "play");
     audio.play();
   } else {
+    emits("play", "pause");
     audio.pause();
   }
 };
 const currentLyric = ref("歌词");
 const lyric = parseLyric();
+
 onMounted(() => {
   const timeZoneMatchLyricDic: {} = parseLyric();
   const audio = document.getElementsByClassName("bg-music")[0];
@@ -43,11 +62,13 @@ const hignLight = () => {};
 <style scoped>
 .bg-music-component {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: flex-end;
   position: fixed;
-  bottom: 60px;
-  right: 20px;
+  /* bottom: 60px;
+  right: 20px; */
+  top: 20px;
+  right: 350px;
   z-index: 1000;
   color: var(--c-color);
   font-weight: var(--font-title2-weight);
@@ -57,24 +78,14 @@ const hignLight = () => {};
 }
 @media (max-width: 1100px) {
   .bg-music-component {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    z-index: 1000;
-    color: var(--c-color);
-    font-weight: var(--font-title2-weight);
+    display: none;
   }
   .music-lyric {
     display: none;
   }
 }
 audio {
-  /* z-index: 1000; */
   height: 30px;
-  /* width: 100px; */
   background-color: rgba(255, 255, 255, 0);
 }
 .playIcon {

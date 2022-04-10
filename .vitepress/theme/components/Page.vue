@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShareCard />
+    <!-- <ShareCard /> -->
     <div class="blogList">
       <div class="blogListBg">
         <a
@@ -62,7 +62,7 @@ interface post {
   frontMatter: object;
 }
 import { onMounted, ref, reactive } from "vue";
-import ShareCard from "./ShareCard.vue";
+// import ShareCard from "./ShareCard.vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
 let screenWidth = ref(0);
@@ -73,7 +73,7 @@ onMounted(() => {
 let postsAll = theme.value.posts || [];
 // get postLength
 let postLength = theme.value.postLength;
-// get pageSize
+// get pageSize 文章数目
 let pageSize = theme.value.pageSize + 3;
 
 //pagesNum指共的页数
@@ -117,7 +117,8 @@ const getPrePages = function () {
 //获取后面的页数
 const getAfterPages = function () {
   //最后一页的页码与总共的页数相等就返回
-  if (pagesNum === pagesQueue.value[pagesQueue.value.length - 1]) {
+
+  if (pagesNum - 1 === pagesQueue.value[pagesQueue.value.length - 1]) {
     return;
   }
   //下一个队列的开始值
