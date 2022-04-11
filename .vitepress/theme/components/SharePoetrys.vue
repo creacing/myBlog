@@ -1,9 +1,7 @@
 <template>
-  <div class="shareCard">
-    <div class="share-poetrys">
-      <span class="home-title-large">{{ poetry }}</span>
-      <span class="home-title-small">{{ poetry }}</span>
-    </div>
+  <div class="share-poetrys">
+    <span class="home-title-large">{{ poetry }}</span>
+    <span class="home-title-small">{{ poetry }}</span>
   </div>
 </template>
 

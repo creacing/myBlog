@@ -3,8 +3,8 @@ import { getPosts, getPostLength } from "./theme/serverUtils";
 async function config() {
     return {
         lang: "zh-CN",
-        title: "七夜许愿星",
-        description: "七夜许愿星的博客",
+        title: "七夜的许愿星",
+        description: "七夜的许愿星的博客",
         head: [
             [
                 "link",
@@ -32,7 +32,7 @@ async function config() {
                 "meta",
                 {
                     property: "og:description",
-                    content: "七夜许愿星的博客",
+                    content: "七夜的许愿星的博客",
                 },
             ],
         ],

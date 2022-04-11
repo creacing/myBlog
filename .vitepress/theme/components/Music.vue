@@ -31,7 +31,6 @@ let musicON = ref(false);
 const emits = defineEmits(["play"]);
 
 const playMusic = () => {
-  emits("handlePlay");
   musicON.value = !musicON.value;
   const audio = document.getElementsByClassName("bg-music")[0];
   if (audio.paused) {
@@ -76,7 +75,7 @@ const hignLight = () => {};
   width: 20px;
   height: 20px; */
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .bg-music-component {
     display: none;
   }

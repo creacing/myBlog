@@ -2,7 +2,7 @@
   <div class="about">
     <div class="aboutPage">
       <article>
-        <h2><p class="about-header">欢迎来到😱七夜许愿星😱的个人小站</p></h2>
+        <h2><p class="about-header">欢迎来到😱七夜的许愿星😱的个人小站</p></h2>
       </article>
 
       <article style="margin: 0">
@@ -52,10 +52,6 @@
 .about-title {
   margin: 10px 0;
 }
-/* .about-body-article {
-  height: 56vh;
-  overflow: auto;
-} */
 .about-article-head {
   font-size: var(--font-title2-size);
   font-weight: var(--font-title2-weight);
@@ -79,10 +75,6 @@
   flex-direction: column;
   align-items: center;
   margin: 20px;
-  /* background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 4px 4px 12px 2px rgba(123, 104, 238, 0.2); */
 }
 .about {
   display: flex;

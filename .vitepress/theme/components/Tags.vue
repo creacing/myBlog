@@ -1,24 +1,22 @@
 <template>
   <div class="my-tags">
-    <div class="tags-header-name">
-      <div>
-        <h1 class="tags-header">标签</h1>
-      </div>
-      <div class="total-articles-num">
-        <h3>{{ `共${articlesNum - 5} 篇` }}</h3>
-      </div>
-    </div>
     <div class="tags">
-      <span
-        @click="toggleTag(key)"
-        v-for="(item, key) in data"
+      <div
+        class="tag-shell"
+        v-for="(item, key, index) in data"
         :key="item"
-        class="tag"
-        :style="getFontSize(data[key].length)"
-        :class="{ activetag: selectTag === key }"
+        :style="[{ background: colorList[index] }]"
       >
-        {{ key }} <span class="tag-length">{{ data[key].length }}</span>
-      </span>
+        <span
+          @click="toggleTag(key)"
+          class="tag"
+          :style="getFontSize(data[key].length)"
+          :class="{ activetag: selectTag === key }"
+        >
+          {{ key }}
+          <span class="tag-length">{{ data[key].length }}</span>
+        </span>
+      </div>
     </div>
     <h4 class="header">
       <svg
@@ -58,9 +56,49 @@
 import { computed, ref, onMounted } from "vue";
 import { useData, withBase } from "vitepress";
 import { initTags } from "../utils";
+//颜色列表
+const colorList: Array<string> = [
+  "#ff9804",
+  "#69b9cd",
+  "#60a8d3",
+  "#f1a9cc",
+  "#caaeff",
+  "#45cadd",
+  "#b29ddb",
+  "#84dcc6",
+  "#fcc7f5",
+  "#c2f8f6",
+  "#b288ff",
+  "#9ed8d8",
+  "#c2e9e6",
+  "#b9f2e7",
+  "#2ac6da",
+  "#8193f1",
+  "#ffcbd5",
+  "#ff9804",
+  "#b68dff",
+  "#84c7d0",
+  "#62b6cb",
+  "#c9abf3",
+  "#5f558e",
+  "#2fc7db",
+  "#decdfd",
+  "#d59787",
+  "#35bdb2",
+  "#d0bfb4",
+  "#8d99ae",
+  "#7ecccb",
+  "#c7a0c5",
+  "#98ba5d",
+  "#53807a",
+  "#6f556b",
+  "#ad93d6",
+];
 
 const { theme } = useData();
 const data = computed(() => initTags(theme.value.posts));
+console.log("dataxx", data);
+
 let articlesNum = theme.value.postLength;
 
 //给tags设置默认值
@@ -80,12 +118,12 @@ const getFontSize = (length: number) => {
 </script>
 
 <style scoped>
-.total-articles-num {
-  margin-left: 20px;
+.tag-shell {
+  background-color: rgba(255, 255, 255);
+  border-radius: 1rem;
+  margin: 0.2rem;
 }
-.tags-header-name {
-  display: flex;
-}
+
 .tags-header {
   font-weight: bold;
   padding-bottom: 14px;

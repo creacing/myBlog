@@ -1,43 +1,44 @@
 <template>
-  <div>
-    <!-- <ShareCard /> -->
+  <div class="blogPage">
     <div class="blogList">
       <div class="blogListBg">
-        <a
-          class="blog"
-          v-for="item in posts"
-          :href="withBase(item.regularPath)"
-          :key="item"
-        >
-          <div class="article-short-intro">
-            <!-- 防止title溢出 -->
-            <div class="title article-short-intro-el">
-              {{
-                screenWidth < 400
-                  ? `${
-                      item.frontMatter.title &&
-                      item.frontMatter.title.substring(0, 11)
-                    }...`
-                  : item.frontMatter.title
-              }}
+        <div v-for="item in posts" :key="item" class="blogBg1">
+          <div class="blogBg2">
+            <div class="blogImage">
+              <img src="/article.jpg" alt="文章背景图" />
             </div>
-            <div class="tags article-short-intro-el">
-              🏷️&nbsp;{{
-                item.frontMatter.tags && item.frontMatter.tags.join(" ")
-              }}
-            </div>
-            <div class="date article-short-intro-el">
-              <div>
-                {{ transDate(item.frontMatter.date) }}
+            <a class="blog" :href="withBase(item.regularPath)">
+              <div class="article-short-intro">
+                <!-- 防止title溢出 -->
+                <div class="title article-short-intro-el">
+                  {{
+                    screenWidth < 400
+                      ? `${
+                          item.frontMatter.title &&
+                          item.frontMatter.title.substring(0, 11)
+                        }...`
+                      : item.frontMatter.title
+                  }}
+                </div>
+                <div class="tags article-short-intro-el">
+                  🔖&nbsp;{{
+                    item.frontMatter.tags && item.frontMatter.tags.join(" ")
+                  }}
+                </div>
+                <div class="date article-short-intro-el">
+                  <div>
+                    {{ transDate(item.frontMatter.date) }}
+                  </div>
+                  <button class="read-more" v-show="screenWidth > 400">
+                    阅读全文 >>
+                  </button>
+                </div>
               </div>
-              <button class="read-more" v-show="screenWidth > 400">
-                阅读全文
-              </button>
-            </div>
-          </div>
 
-          <div class="blog-hr"></div>
-        </a>
+              <div class="blog-hr"></div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="pagination">
@@ -74,7 +75,7 @@ let postsAll = theme.value.posts || [];
 // get postLength
 let postLength = theme.value.postLength;
 // get pageSize 文章数目
-let pageSize = theme.value.pageSize + 3;
+let pageSize = theme.value.pageSize;
 
 //pagesNum指共的页数
 let pagesNum =
@@ -173,70 +174,90 @@ const go = (i) => {
   posts.value = allMap[pageCurrent.value - 1];
 };
 // timestamp transform
+const monthDic = {
+  "1": `Jan`,
+  "01": `Jan`,
+  "2": `Feb`,
+  "02": `Feb`,
+  "3": `Mar`,
+  "03": `Mar`,
+  "4": `Apr`,
+  "04": `Apr`,
+  "5": `May`,
+  "05": `May`,
+  "6": `Jun`,
+  "06": `Jun`,
+  "7": `Jul`,
+  "07": `Jul`,
+  "8": `Aug`,
+  "08": `Aug`,
+  "9": `Sep`,
+  "09": `Sep`,
+  "10": `Oct`,
+  "11": `Nov`,
+  "12": `Dec`,
+};
 const transDate = (date: string) => {
   const dateArray = date.split("-");
   let year = dateArray[0],
     month = ``,
     day = dateArray[2];
-  switch (dateArray[1]) {
-    case "1":
-    case "01":
-      month = `Jan`;
-      break;
-    case "2":
-    case "02":
-      month = `Feb`;
-      break;
-    case "3":
-    case "03":
-      month = `Mar`;
-      break;
-    case "4":
-    case "04":
-      month = `Apr`;
-      break;
-    case "5":
-    case "05":
-      month = `May`;
-      break;
-    case "6":
-    case "06":
-      month = `Jun`;
-      break;
-    case "7":
-    case "07":
-      month = `Jul`;
-      break;
-    case "8":
-    case "08":
-      month = `Aug`;
-      break;
-    case "9":
-    case "09":
-      month = `Sep`;
-      break;
-    case "10":
-      month = `Oct`;
-      break;
-    case "11":
-      month = `Nov`;
-      break;
-    case "12":
-      month = `Dec`;
-      break;
-    default:
-      month = `Month`;
+  if (Object.keys(monthDic).includes(dateArray[1])) {
+    month = monthDic[dateArray[1]];
+  } else {
+    month = "";
   }
   return `${month} ${day}, ${year}`;
 };
 </script>
 
 <style scoped>
+.blogImage {
+  height: 10rem;
+  width: 20rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.blogImage > img {
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 1400px) {
+  .blogImage {
+    display: none;
+  }
+}
+.blogPage {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--header-height);
+}
+.blogBg1 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 3rem;
+  background-color: rgba(200, 206, 243, 0.2);
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+}
+.blogBg2 {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  background-color: rgba(238, 240, 251, 0.2);
+  padding: 10px 20px;
+}
 .read-more {
   background-color: rgba(255, 255, 255, 0.2);
   border: 0;
   display: block;
-  padding: 3px;
+  padding: 5px;
+  border-radius: 5px;
 }
 .article-short-intro-el {
   padding-bottom: 20px;
@@ -244,7 +265,6 @@ const transDate = (date: string) => {
 
 .blog-hr {
   border-bottom: 2px solid rgb(123, 104, 238, 0.3);
-  /* margin-top: 10px; */
 }
 .article-short-intro :hover {
   color: mediumslateblue;
@@ -259,7 +279,6 @@ const transDate = (date: string) => {
 }
 .blogList {
   padding: 30px 0;
-  padding-bottom: 130px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -273,11 +292,15 @@ const transDate = (date: string) => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 3rem;
+  padding: 10px;
 }
+
 .blog {
-  height: 160px;
+  height: 10rem;
   width: 85%;
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   padding: 0 20px;
   cursor: pointer;
@@ -290,6 +313,7 @@ const transDate = (date: string) => {
   font-size: 1.2em;
   font-weight: bold;
   color: var(--c-color);
+  text-align: center;
 }
 .date {
   display: flex;
@@ -306,28 +330,26 @@ const transDate = (date: string) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 70px;
+  /* position: absolute;
+  bottom: 70px; */
   width: 100%;
 }
 .link {
+  border-radius: 0.5rem;
   margin-right: 5px;
-  width: 2rem;
+  width: 2.5rem;
   height: 2rem;
   line-height: 2rem;
   text-align: center;
   cursor: pointer;
   transition: 0.2s;
-  border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-}
-.link:last-child {
 }
 .link:hover {
   transform: translate(-1px, -1px);
 }
 .activeLink {
-  background-color: mediumslateblue;
+  background-color: #958daf;
   color: white;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <!-- share card -->
+  <!-- 诗词分享 -->
   <SharePoetrys v-show="showSharePoetrys" />
   <!-- cover: 背景图片 -->
   <div class="cover"></div>
@@ -11,13 +11,15 @@
   <!-- <Flower class="flower" /> -->
   <!-- 背景蝴蝶 -->
   <Butterfly class="butterfly" />
-  <!-- 搜索功能 -->
-  <Search />
+
   <!-- 音乐播放功能 -->
   <Music @play="play" />
   <!-- 默认布局 #navbar-search表示v-slot:'navbar-search'-->
   <Layout>
-    <template #navbar-search> <ToggleTheme /></template>
+    <template #navbar-search>
+      <!-- 搜索功能 -->
+      <Search
+    /></template>
     <template #page-top class="page-top">
       <Title v-if="isPost" />
       <Category v-if="isPost" />
@@ -122,8 +124,9 @@ const isPost = computed(() => {
   height: 100vh;
   width: 100%;
   z-index: -10;
-  /* background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg); */
-  background-image: url(/bgys50.jpg);
+  background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg);
+  /* background-image: url(/bgys50.jpg); */
+  /* background-image: url(/bg.jpg); */
   position: fixed;
   top: 0;
   left: 0;
@@ -133,7 +136,6 @@ const isPost = computed(() => {
 .mask {
   height: 100vh;
   width: 100%;
-  /* filter: blur(9px); */
   position: fixed;
   z-index: -9;
   background-color: rgba(255, 255, 255, 0.3);

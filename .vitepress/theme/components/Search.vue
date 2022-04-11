@@ -75,11 +75,13 @@ onBeforeMount(() => {
 .row-space-line {
   border-bottom: 1px dashed rgb(198, 202, 204, 0.4);
 }
+/* 搜索图标 */
 .search-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  width: 22px;
   z-index: 1000;
+  /* 搜索图标与左侧距离 */
+  margin-left: 15px;
+  cursor: pointer;
 }
 .search-dialog {
   height: 400px;
@@ -127,6 +129,7 @@ onBeforeMount(() => {
 .search-content > a:hover {
   color: mediumslateblue;
 }
+/* 搜索弹框滚动条样式 */
 /* 滚动条的宽度 */
 ::-webkit-scrollbar {
   width: 5px;
