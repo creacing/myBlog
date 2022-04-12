@@ -12,12 +12,12 @@
       </article>
 
       <article class="about-body-article">
-        <h3 class="about-title">博客地址</h3>
+        <!-- <h3 class="about-title">博客地址</h3>
         <h4><a>https://github.com/creacing/myBlog</a></h4>
         <h3 class="about-title">高清背景图</h3>
         <h4><a>https://jsui.fun/bg.jpg</a></h4>
-        <h3 class="about-title">日记</h3>
-        <h4>2022.3.15</h4>
+        <h3 class="about-title">日记</h3> -->
+        <!-- <h4>2022.3.15</h4>
         <p>> 添加文章总数 > 给文章分类</p>
         <h4>2022.3.18</h4>
         <p>
@@ -41,7 +41,7 @@
         <h4>2022.4.7</h4>
         <p>> 分页改造 > tags样式修改</p>
         <h4>2022.4.10</h4>
-        <p>> butterfly > search</p>
+        <p>> butterfly > search</p> -->
       </article>
     </div>
   </div>

@@ -6,6 +6,7 @@
         v-for="(item, key, index) in data"
         :key="item"
         :style="[{ background: colorList[index] }]"
+        style="opacity: 0.7"
       >
         <span
           @click="toggleTag(key)"
@@ -36,19 +37,20 @@
         ></path></svg
       ><span class="header-text">{{ selectTag }}</span>
     </h4>
-    <div class="tag-intro">
-      <a
-        :href="withBase(article.regularPath)"
-        v-for="(article, index) in data[selectTag]"
-        :key="index"
-        class="article"
-      >
-        <div class="title">
-          <div class="title-o"></div>
-          {{ article.frontMatter.title }}
-        </div>
-        <div class="date">{{ article.frontMatter.date }}</div>
-      </a>
+    <div
+      class="article-shell1"
+      v-for="(article, index) in data[selectTag]"
+      :key="index"
+    >
+      <div class="article-shell2">
+        <a :href="withBase(article.regularPath)" class="article">
+          <div class="title">
+            <div class="title-o"></div>
+            {{ article.frontMatter.title }}
+          </div>
+          <div class="date">{{ article.frontMatter.date }}</div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -118,8 +120,27 @@ const getFontSize = (length: number) => {
 </script>
 
 <style scoped>
+.article-shell1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  background-color: rgba(200, 206, 243, 0.2);
+  margin: 0.1rem 0;
+}
+.article-shell2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: rgba(200, 206, 243, 0.2);
+}
+.article-shell1 :hover {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .tag-shell {
-  background-color: rgba(255, 255, 255);
   border-radius: 1rem;
   margin: 0.2rem;
 }
@@ -134,7 +155,7 @@ const getFontSize = (length: number) => {
   flex-wrap: wrap;
   align-items: center;
   justify-content: left;
-  border-bottom: 1px dashed mediumslateblue;
+  /* border-bottom: 1px dashed mediumslateblue; */
   margin-bottom: 10px;
 }
 .tag {
@@ -178,6 +199,7 @@ const getFontSize = (length: number) => {
   padding-left: 10px;
 }
 .article {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

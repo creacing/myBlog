@@ -34,6 +34,9 @@
 
 .content {
     padding-bottom: 0 !important;
+    overflow: hidden;
+    /* border-radius: 3rem; */
+    padding: 0.5rem;
 }
 
 .content>div>div {
@@ -67,6 +70,10 @@ header {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+.nav-bar {
+    border-bottom: unset !important;
+}
+
 
 /* 设置全局滚动条 */
 
@@ -96,7 +103,7 @@ header {
 }
 
 .sidebar.open {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 body {

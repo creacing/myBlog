@@ -1,23 +1,36 @@
 <template>
   <div>
-    <!-- <div class="archives-sidebar"></div> -->
-    <div style="padding-top: 10px" class="archives-page">
-      <div v-for="yearList in data" class="yearItem" :key="yearList">
-        <div class="year">
-          {{ yearList[0].frontMatter.date.split("-")[0] }}
-        </div>
-        <a
-          :href="withBase(article.regularPath)"
-          v-for="(article, index) in yearList"
-          :key="index"
-          class="article"
+    <div class="archives-page">
+      <div class="years">
+        <div
+          v-for="(yearList, index) in data"
+          :key="yearList"
+          class="year"
+          :style="[{ background: colorList[index] }]"
+          style="opacity: 0.7"
         >
-          <div class="title">
-            <div class="title-o"></div>
-            {{ article.frontMatter.title }}
+          <div class="year-name" @click="showArchivesByYear(index)">
+            {{ yearList[0].frontMatter.date.split("-")[0] }}
+            <span class="year-num">{{ yearList.length }}</span>
           </div>
-          <div class="date">{{ article.frontMatter.date.slice(5) }}</div>
-        </a>
+        </div>
+      </div>
+      <div
+        class="article-shell1"
+        v-for="(article, index) in year_archives"
+        :key="index"
+      >
+        <div class="article-shell2">
+          <a :href="withBase(article.regularPath)" class="article">
+            <div class="title">
+              <div class="title-o"></div>
+              {{ article.frontMatter.title }}
+            </div>
+            <div class="date">
+              {{ article.frontMatter.date.slice(5) }}
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -25,54 +38,116 @@
 
 <script lang="ts" setup>
 import { useData, withBase } from "vitepress";
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useYearSort } from "../utils";
-
+const colorList: Array<string> = [
+  "#ff9804",
+  "#69b9cd",
+  "#60a8d3",
+  "#f1a9cc",
+  "#caaeff",
+  "#45cadd",
+  "#b29ddb",
+  "#84dcc6",
+  "#fcc7f5",
+  "#c2f8f6",
+  "#b288ff",
+  "#9ed8d8",
+  "#c2e9e6",
+  "#b9f2e7",
+  "#2ac6da",
+  "#8193f1",
+  "#ffcbd5",
+  "#ff9804",
+  "#b68dff",
+  "#84c7d0",
+  "#62b6cb",
+  "#c9abf3",
+  "#5f558e",
+  "#2fc7db",
+  "#decdfd",
+  "#d59787",
+  "#35bdb2",
+  "#d0bfb4",
+  "#8d99ae",
+  "#7ecccb",
+  "#c7a0c5",
+  "#98ba5d",
+  "#53807a",
+  "#6f556b",
+  "#ad93d6",
+];
 const { theme } = useData();
 const data = computed(() => useYearSort(theme.value.posts));
-console.log(data, "data");
+const year_archives = ref([]);
+onMounted(() => {
+  year_archives.value = data.value[0];
+});
+
+const showArchivesByYear = (index: number) => {
+  year_archives.value = data.value[index];
+};
 </script>
 
 <style scoped>
-/* .archives-sidebar {
-  width: 200px;
-  position: fixed;
-  height: 400px;
-  border: 1px solid black;
-  top: 50%;
-  left: 30px;
-  transform: translate(0, -50%);
-} */
-.archives-page {
-  /* margin-top: 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 4px 4px 12px 2px rgba(123, 104, 238, 0.2); */
-}
-.yearItem {
-  border-bottom: 1px dashed mediumslateblue;
-}
-.yearItem:last-child {
-  border: none;
+.years {
+  display: flex;
+  /* border-bottom: 1px dashed mediumslateblue; */
 }
 .year {
-  padding: 16px 0 8px 0;
+  border-radius: 0.7rem;
+  margin: 0.2rem;
+  padding: 0 0.2rem;
+}
+.year-name {
+  padding: 0.2rem 0;
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--c-color);
 }
+.year-num {
+  color: var(--c-brand);
+  font-size: 12px !important;
+  position: relative;
+  top: -8px;
+}
+.archives-page {
+  padding-top: 10px;
+}
 
 .article {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 10px;
+  margin: 0.2rem;
   /* color: #666; */
   color: #000;
   font-weight: 600;
   transition: border 0.3s ease, color 0.3s ease;
+  padding: 0.1rem;
 }
+.article-shell1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  background-color: rgba(200, 206, 243, 0.2);
+  margin: 0.1rem 0;
+}
+.article-shell2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: rgba(200, 206, 243, 0.2);
+}
+.article-shell1 :hover {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .article:hover {
   text-decoration: none;
   color: var(--c-brand);

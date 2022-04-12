@@ -29,7 +29,7 @@
                   <div>
                     {{ transDate(item.frontMatter.date) }}
                   </div>
-                  <button class="read-more" v-show="screenWidth > 400">
+                  <button class="read-more" v-show="screenWidth > 600">
                     阅读全文 >>
                   </button>
                 </div>
@@ -233,7 +233,7 @@ const transDate = (date: string) => {
   padding-bottom: var(--header-height);
 }
 .blogBg1 {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 10px;
@@ -245,7 +245,7 @@ const transDate = (date: string) => {
   width: 100%;
 }
 .blogBg2 {
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: center;
   border-radius: 2rem;
@@ -288,17 +288,22 @@ const transDate = (date: string) => {
 .blogListBg {
   width: 100%;
   border-radius: 10px;
-  max-width: 60%;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 3rem;
   padding: 10px;
 }
+@media (max-width: 1400px) {
+  .blogListBg {
+    max-width: 100%;
+  }
+}
 
 .blog {
-  height: 10rem;
-  width: 85%;
+  /* height: 10rem; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
