@@ -288,7 +288,7 @@ const transDate = (date: string) => {
 .blogListBg {
   width: 100%;
   border-radius: 10px;
-  max-width: 70%;
+  max-width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
