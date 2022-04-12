@@ -11,6 +11,18 @@
 
 /* mediumslateblue */
 
+
+/* .content::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 26rem;
+    background-image: url(/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1rem;
+  } */
+
 :root {
     --c-brand: #646cff;
     --c-brand-light: #747bff;

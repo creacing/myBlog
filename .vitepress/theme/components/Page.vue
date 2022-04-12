@@ -2,10 +2,17 @@
   <div class="blogPage">
     <div class="blogList">
       <div class="blogListBg">
-        <div v-for="item in posts" :key="item" class="blogBg1">
+        <div v-for="(item, index) in posts" :key="item" class="blogBg1">
           <div class="blogBg2">
             <div class="blogImage">
-              <img src="/article.jpg" alt="文章背景图" />
+              <img
+                :src="
+                  pageCurrent * 5 + index < 89
+                    ? `./articlesPictures/${pageCurrent * 5 + index}.jpg`
+                    : `./articlesPictures/${(pageCurrent - 18) * 5 + index}.jpg`
+                "
+                alt="文章背景图"
+              />
             </div>
             <a class="blog" :href="withBase(item.regularPath)">
               <div class="article-short-intro">
@@ -62,9 +69,11 @@ interface post {
   regularPath: string;
   frontMatter: object;
 }
+
 import { onMounted, ref, reactive } from "vue";
 // import ShareCard from "./ShareCard.vue";
 import { useData, withBase } from "vitepress";
+
 const { theme } = useData();
 let screenWidth = ref(0);
 onMounted(() => {
