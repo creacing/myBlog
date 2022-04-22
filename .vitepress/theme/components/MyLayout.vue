@@ -125,7 +125,6 @@ const isPost = computed(() => {
   width: 100%;
   z-index: -10;
   background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386480/ddde844ee9b1b677395b071f53f55a8bdad5a96c.jpg);
-  /* background-image: url(/bgys50.jpg); */
   /* background-image: url(/bg.jpg); */
   position: fixed;
   top: 0;

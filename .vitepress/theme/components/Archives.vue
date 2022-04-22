@@ -1,17 +1,19 @@
 <template>
   <div>
     <div class="archives-page">
-      <div class="years">
-        <div
-          v-for="(yearList, index) in data"
-          :key="yearList"
-          class="year"
-          :style="[{ background: colorList[index] }]"
-          style="opacity: 0.7"
-        >
-          <div class="year-name" @click="showArchivesByYear(index)">
-            {{ yearList[0].frontMatter.date.split("-")[0] }}
-            <span class="year-num">{{ yearList.length }}</span>
+      <div class="years-shell">
+        <div class="years">
+          <div
+            v-for="(yearList, index) in data"
+            :key="yearList"
+            class="year"
+            :style="[{ background: colorList[index] }]"
+            style="opacity: 0.7"
+          >
+            <div class="year-name" @click="showArchivesByYear(index)">
+              {{ yearList[0].frontMatter.date.split("-")[0] }}
+              <span class="year-num">{{ yearList.length }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -90,8 +92,17 @@ const showArchivesByYear = (index: number) => {
 </script>
 
 <style scoped>
+.years-shell {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 .years {
   display: flex;
+  padding: 10px;
+  background-color: rgba(169, 170, 207, 0.3);
+  border-radius: 15px;
   /* border-bottom: 1px dashed mediumslateblue; */
 }
 .year {

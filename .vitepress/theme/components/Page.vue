@@ -5,14 +5,17 @@
         <div v-for="(item, index) in posts" :key="item" class="blogBg1">
           <div class="blogBg2">
             <div class="blogImage">
-              <img
+              <img src="/articlePicture.jpg" alt="文章背景图" />
+              <!-- 多图情况下使用，这里由于性能问题 -->
+              <!-- <img
                 :src="
                   pageCurrent * 5 + index < 89
                     ? `./articlesPictures/${pageCurrent * 5 + index}.jpg`
                     : `./articlesPictures/${(pageCurrent - 18) * 5 + index}.jpg`
                 "
                 alt="文章背景图"
-              />
+              /> -->
+              <!-- articlePicture -->
             </div>
             <a class="blog" :href="withBase(item.regularPath)">
               <div class="article-short-intro">
@@ -71,7 +74,6 @@ interface post {
 }
 
 import { onMounted, ref, reactive } from "vue";
-// import ShareCard from "./ShareCard.vue";
 import { useData, withBase } from "vitepress";
 
 const { theme } = useData();

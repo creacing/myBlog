@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="aboutPage">
-      <article>
+      <article class="about-shell">
         <h2><p class="about-header">欢迎来到😱七夜的许愿星😱的个人小站</p></h2>
       </article>
 
@@ -49,6 +49,11 @@
 <script lang="ts" setup>
 </script>
 <style scoped>
+.about-header {
+  padding: 10px;
+  background-color: rgba(170, 173, 205, 0.5);
+  border-radius: 15px;
+}
 .about-title {
   margin: 10px 0;
 }
