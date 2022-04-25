@@ -92,18 +92,19 @@ const showArchivesByYear = (index: number) => {
 </script>
 
 <style scoped>
-.years-shell {
+/* .years-shell {
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 1rem;
+  background-color: rgba(200, 206, 243, 0.2);
   margin-bottom: 10px;
-}
+} */
 .years {
   display: flex;
-  padding: 10px;
-  background-color: rgba(169, 170, 207, 0.3);
-  border-radius: 15px;
-  /* border-bottom: 1px dashed mediumslateblue; */
+  /* padding: 10px; */
+  /* padding: 0.3rem;
+  border-radius: 1rem;
+  background-color: rgba(200, 206, 243, 0.2);
+  margin: 0.1rem 0; */
 }
 .year {
   border-radius: 0.7rem;

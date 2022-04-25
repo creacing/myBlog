@@ -5,7 +5,7 @@
         <div v-for="(item, index) in posts" :key="item" class="blogBg1">
           <div class="blogBg2">
             <div class="blogImage">
-              <img src="/articlePicture.jpg" alt="文章背景图" />
+              <img src="/articlePicture.png" alt="文章背景图" />
               <!-- 多图情况下使用，这里由于性能问题 -->
               <!-- <img
                 :src="
@@ -77,6 +77,7 @@ import { onMounted, ref, reactive } from "vue";
 import { useData, withBase } from "vitepress";
 
 const { theme } = useData();
+
 let screenWidth = ref(0);
 onMounted(() => {
   screenWidth.value = screen.width;
@@ -223,9 +224,16 @@ const transDate = (date: string) => {
 </script>
 
 <style scoped>
-.blogImage {
+/* long picture style */
+/* .blogImage {
   height: 10rem;
   width: 20rem;
+  border-radius: 1rem;
+  overflow: hidden;
+} */
+.blogImage {
+  height: 10rem;
+  width: 12rem;
   border-radius: 1rem;
   overflow: hidden;
 }

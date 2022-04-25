@@ -4,12 +4,15 @@ import Tags from "./components/Tags.vue";
 import About from "./components/About.vue";
 import Fanju from "./components/Fanju.vue";
 import MyLayout from "./components/MyLayout.vue";
+
+// import VueClipboard from 'vue-clipboard2'
 import "./custom.css";
 //入口
 export default {
     ...DefaultTheme,
     Layout: MyLayout,
     enhanceApp({ app, router, siteData }) {
+        // app.use(VueClipboard)
         // 注册全局组件
         app.component("Archives", Archives);
         app.component("Tags", Tags);

@@ -52,6 +52,27 @@ import SharePoetrys from "./SharePoetrys.vue";
 
 import { useData } from "vitepress";
 import { computed, onMounted, onBeforeMount, ref } from "vue";
+
+// let currentUrl = window.location.href;
+// const copy = window.addEventListener("click", () => {
+//   if (window.location.href === currentUrl) {
+//     return;
+//   } else {
+//     currentUrl = window.location.href;
+//     console.log("currentUrl", currentUrl);
+
+//     setTimeout(() => {
+//       const codeTags = document.getElementsByTagName("code");
+
+//       for (let i = 0; i < codeTags.length; i++) {
+//         const codeTag = codeTags[i];
+//         codeTag.onclick = () => {
+//           alert("xx");
+//         };
+//       }
+//     }, 1000);
+//   }
+// });
 //显示诗句组件
 const showSharePoetrys: Boolean = ref(true);
 const play = () => {
