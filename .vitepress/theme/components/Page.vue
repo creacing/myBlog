@@ -231,6 +231,7 @@ const transDate = (date: string) => {
   border-radius: 1rem;
   overflow: hidden;
 } */
+
 .blogImage {
   height: 10rem;
   width: 12rem;
@@ -304,10 +305,16 @@ const transDate = (date: string) => {
   align-items: center;
   padding-bottom: 10px;
 }
+@media (max-width: 1400px) {
+  .blogListBg {
+    max-width: 65%;
+  }
+}
+
 .blogListBg {
   width: 100%;
   border-radius: 10px;
-  max-width: 65%;
+  max-width: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;

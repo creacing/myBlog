@@ -92,12 +92,9 @@ const showArchivesByYear = (index: number) => {
 </script>
 
 <style scoped>
-/* .years-shell {
-  padding: 10px;
-  border-radius: 1rem;
-  background-color: rgba(200, 206, 243, 0.2);
-  margin-bottom: 10px;
-} */
+.years-shell {
+  width: 100%;
+}
 .years {
   display: flex;
   /* padding: 10px; */
@@ -107,7 +104,7 @@ const showArchivesByYear = (index: number) => {
   margin: 0.1rem 0; */
 }
 .year {
-  border-radius: 0.7rem;
+  /* border-radius: 0.7rem; */
   margin: 0.2rem;
   padding: 0 0.2rem;
 }
@@ -116,6 +113,10 @@ const showArchivesByYear = (index: number) => {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--c-color);
+}
+.year :hover {
+  width: 8rem;
+  text-align: center;
 }
 .year-num {
   color: var(--c-brand);
