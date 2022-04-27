@@ -927,6 +927,11 @@ nanoid@^3.1.30:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.30.tgz"
   integrity sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==
 
+node-arp@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/node-arp/-/node-arp-1.0.6.tgz#8ab4f6fff1c57e147a20a32a1e39e577aeb45898"
+  integrity sha512-miX3CXZv1CvsWeAeoB66GVbn8X0WEbcZTmpZBnIzK4t02YF7+JDeFxYWFcqcDDaM2d/vzUFTx4zxr+G1NBRmGQ==
+
 node-domexception@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/node-domexception/-/node-domexception-1.0.0.tgz#6888db46a1f71c0b76b3f7555016b63fe64766e5"
