@@ -98,12 +98,23 @@ onBeforeMount(() => {
   border-radius: 5px;
   background-color: rgba(238, 237, 240, 0.9);
 }
+@media (max-width: 1400px) {
+  .search-dialog {
+    width: 20rem;
+  }
+}
+
 .search-input-text {
   width: 520px;
   height: 30px;
   border: 1px solid #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px mediumslateblue;
+  /* box-shadow: 0 0 10px mediumslateblue; */
+}
+@media (max-width: 1400px) {
+  .search-input-text {
+    width: 15rem;
+  }
 }
 .search-input-btn {
   height: 30px;
@@ -112,7 +123,8 @@ onBeforeMount(() => {
   padding: 2px;
   border: 1px solid #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px mediumslateblue;
+  /* box-shadow: 0 0 10px mediumslateblue; */
+  background-color: rgba(123, 104, 238, 0.3);
 }
 .search-input-text:focus {
   outline: none;

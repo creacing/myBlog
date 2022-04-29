@@ -3,14 +3,14 @@
     <div class="aboutPage">
       <article>
         <h2><p class="about-header">欢迎来到 七夜的许愿星 的个人小站</p></h2>
-      </article>
-
-      <article style="margin: 0">
         <h3 class="about-article-head" style="margin-top: 0">
           一个专注于 javascript 的技术爱好者
         </h3>
       </article>
-
+      <div class="chart-title"><h4>更新记录</h4></div>
+      <div class="about-charts">
+        <div id="main" style="width: 600px; height: 400px"></div>
+      </div>
       <article class="about-body-article">
         <!-- <h3 class="about-title">博客地址</h3>
         <h4><a>https://github.com/creacing/myBlog</a></h4>
@@ -46,19 +46,81 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
+<script setup>
+import initEcharts from "./../utils/Echart.js";
+import { nextTick } from "vue";
+import { useData } from "vitepress";
+
+// 基于准备好的dom，初始化echarts实例
+const chartObj = {
+  title: {
+    text: "",
+  },
+  xAxis: {
+    data: [],
+  },
+  series: [
+    {
+      name: "文章数",
+      type: "bar",
+      data: [],
+    },
+  ],
+};
+
+//获取数据
+const { theme } = useData();
+
+const posts = theme.value.posts;
+const xAxisDic = {};
+for (const post in posts) {
+  const date = posts[post]["frontMatter"]["date"];
+  if (!xAxisDic[date]) {
+    xAxisDic[date] = 1;
+  } else {
+    xAxisDic[date]++;
+  }
+}
+const xAxis = Object.keys(xAxisDic).reverse();
+const series = Object.values(xAxisDic).reverse();
+chartObj.xAxis.data = xAxis;
+chartObj.series[0].data = series;
+// console.log("xAxis---series", xAxis, series);
+
+//生成图表
+nextTick(() => {
+  initEcharts(chartObj);
+});
 </script>
 <style scoped>
-/* .about-header {
-  display: block;
+.chart-title {
+  width: 600px;
+  display: flex;
+  justify-content: flex-start;
+}
+.about-header {
+  width: 600px;
   padding: 10px;
-  background-color: rgba(167, 177, 200, 0.5);
-  border-radius: 15px;
-} */
+  /* background-color: rgba(238, 240, 251, 0.3);
+  border-radius: 10px; */
+  text-align: center;
+}
+
+.about-charts {
+  margin-top: 10px;
+  padding: 30px 10px 0 5px;
+  /* border-radius: 20px; */
+  background-color: rgba(238, 240, 251, 0.5);
+}
 .about-title {
   margin: 10px 0;
 }
 .about-article-head {
+  width: 600px;
+  padding: 10px;
+  /* background-color: rgba(238, 240, 251, 0.3);
+  border-radius: 10px; */
+  text-align: center;
   font-size: var(--font-title2-size);
   font-weight: var(--font-title2-weight);
 }
