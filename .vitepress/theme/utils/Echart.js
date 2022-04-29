@@ -16,4 +16,6 @@ export default function initEcharts(chartObj) {
         yAxis: {},
         series: chartObj.series,
     });
+
+
 }

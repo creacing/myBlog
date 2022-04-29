@@ -48,7 +48,7 @@
 </template>
 <script setup>
 import initEcharts from "./../utils/Echart.js";
-import { nextTick } from "vue";
+import { nextTick, onBeforeMount } from "vue";
 import { useData } from "vitepress";
 
 // 基于准备好的dom，初始化echarts实例
@@ -88,8 +88,10 @@ chartObj.series[0].data = series;
 // console.log("xAxis---series", xAxis, series);
 
 //生成图表
-nextTick(() => {
-  initEcharts(chartObj);
+onBeforeMount(() => {
+  setTimeout(() => {
+    initEcharts(chartObj);
+  });
 });
 </script>
 <style scoped>
