@@ -82,6 +82,7 @@ onBeforeMount(() => {
   /* 搜索图标与左侧距离 */
   margin-left: 15px;
   cursor: pointer;
+  margin-top: 5px;
 }
 .search-dialog {
   height: 400px;

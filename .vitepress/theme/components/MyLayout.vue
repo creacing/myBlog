@@ -51,64 +51,24 @@ import Butterfly from "./Butterfly.vue";
 import SharePoetrys from "./SharePoetrys.vue";
 
 import { useData } from "vitepress";
-import { computed, onMounted, onBeforeMount, ref } from "vue";
+import { computed, onMounted, onBeforeMount, ref, nextTick } from "vue";
 
-// let currentUrl = window.location.href;
-// const copy = window.addEventListener("click", () => {
-//   if (window.location.href === currentUrl) {
-//     return;
-//   } else {
-//     currentUrl = window.location.href;
-//     console.log("currentUrl", currentUrl);
-
-//     setTimeout(() => {
-//       const codeTags = document.getElementsByTagName("code");
-
-//       for (let i = 0; i < codeTags.length; i++) {
-//         const codeTag = codeTags[i];
-//         codeTag.onclick = () => {
-//           alert("xx");
-//         };
-//       }
-//     }, 1000);
-//   }
-// });
 //显示诗句组件
 const showSharePoetrys: Boolean = ref(true);
 const play = () => {
   showSharePoetrys.value = false;
 };
-onMounted(() => {
-  //背景图片渐进式加载
-
-  // var placeholder = document.querySelector(".component-placeholder"),
-  //   small = placeholder.querySelector(".component-img-small");
-
-  // // 1: load small image and show it
-  // var img = new Image();
-  // img.src = small.src;
-  // img.onload = function () {
-  //   small.classList.add("loaded");
-  // };
-
-  // // 2: load large image
-  // var imgLarge = new Image();
-  // imgLarge.src = placeholder.dataset.large;
-  // imgLarge.onload = function () {
-  //   imgLarge.classList.add("loaded");
-  // };
-  // placeholder.appendChild(imgLarge);
-
+onBeforeMount(() => {
   //引入樱花特效
   setTimeout(() => {
     const sakura = document.createElement("script");
     sakura.type = "text/javascript";
-    sakura.src = "/sakura.min.js";
+    sakura.src = "/sakura.js";
     document.body.appendChild(sakura);
     //  <link rel="stylesheet" href="path/to/sakura.min.css">
     const sakuraCss = document.createElement("link");
     sakuraCss.rel = "stylesheet";
-    sakuraCss.href = "/sakura.min.css";
+    sakuraCss.href = "/sakura.css";
     document.head.appendChild(sakuraCss);
   });
 });

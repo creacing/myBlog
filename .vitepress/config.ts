@@ -67,10 +67,6 @@ async function config() {
                     text: "🌱关于",
                     link: "/about",
                 },
-                // {
-                //     text: "📺追番",
-                //     link: "/fanju",
-                // },
             ],
             //这里插入的是Emoji图片
             //侧边栏
