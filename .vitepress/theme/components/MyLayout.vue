@@ -78,7 +78,7 @@ const showSharePoetrys: Boolean = ref(true);
 const play = () => {
   showSharePoetrys.value = false;
 };
-onBeforeMount(() => {
+onMounted(() => {
   //背景图片渐进式加载
 
   // var placeholder = document.querySelector(".component-placeholder"),
