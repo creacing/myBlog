@@ -70,7 +70,7 @@ onBeforeMount(() => {
     sakuraCss.rel = "stylesheet";
     sakuraCss.href = "/sakura.css";
     document.head.appendChild(sakuraCss);
-  });
+  }, 2000);
 });
 //樱花特效
 onMounted(() => {
