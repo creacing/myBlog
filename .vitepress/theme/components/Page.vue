@@ -259,7 +259,7 @@ const transDate = (date: string) => {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 3rem;
-  background-color: rgba(200, 206, 243, 0.2);
+  /* background-color: rgba(200, 206, 243, 0.2); */
   margin: 5px 0;
   padding: 10px;
   width: 100%;
@@ -269,7 +269,7 @@ const transDate = (date: string) => {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  background-color: rgba(238, 240, 251, 0.2);
+  /* background-color: rgba(238, 240, 251, 0.2); */
   padding: 10px 20px;
 }
 .read-more {
@@ -307,7 +307,7 @@ const transDate = (date: string) => {
 }
 @media (max-width: 1400px) {
   .blogListBg {
-    max-width: 65%;
+    max-width: 55%;
   }
 }
 
@@ -344,7 +344,7 @@ const transDate = (date: string) => {
   font-size: 1.2em;
   font-weight: bold;
   color: var(--c-color);
-  text-align: center;
+  /* text-align: center; */
 }
 .date {
   display: flex;

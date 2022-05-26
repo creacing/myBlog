@@ -106,7 +106,7 @@ const showArchivesByYear = (index: number) => {
   justify-content: center;
   padding: 0.3rem;
   border-radius: 1rem;
-  background-color: rgba(200, 206, 243, 0.2);
+  /* background-color: rgba(200, 206, 243, 0.2); */
   margin: 0.1rem 0;
 }
 .article-shell2 {
@@ -114,7 +114,7 @@ const showArchivesByYear = (index: number) => {
   display: flex;
   justify-content: center;
   border-radius: 1rem;
-  background-color: rgba(200, 206, 243, 0.2);
+  /* background-color: rgba(200, 206, 243, 0.2); */
 }
 .article-shell1 :hover {
   padding-left: 2rem;
