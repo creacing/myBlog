@@ -268,9 +268,10 @@ const transDate = (date: string) => {
   width: 100%;
   display: flex;
   justify-content: center;
-  border-radius: 2rem;
-  /* background-color: rgba(238, 240, 251, 0.2); */
+  /* border-radius: 2rem; */
+  background-color: rgba(238, 240, 251, 0.2);
   padding: 10px 20px;
+  padding-top: 1.5rem;
 }
 .read-more {
   background-color: rgba(255, 255, 255, 0.2);

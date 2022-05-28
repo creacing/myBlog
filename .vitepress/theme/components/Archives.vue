@@ -3,8 +3,16 @@
     <div class="archives-page">
       <div class="years-shell">
         <div class="years">
-          <div v-for="(yearList, index) in data" :key="yearList" class="year">
-            <div class="year-name" @click="showArchivesByYear(index)">
+          <div
+            v-for="(yearList, index) in data"
+            :key="yearList"
+            class="year"
+            @click="yearClick(index)"
+          >
+            <div
+              :class="yearColorFlag === index ? 'year-nameActive' : 'year-name'"
+              @click="showArchivesByYear(index)"
+            >
               {{ yearList[0].frontMatter.date.split("-")[0] }}
               <span class="year-num">{{ yearList.length }}</span>
             </div>
@@ -47,6 +55,10 @@ onMounted(() => {
 const showArchivesByYear = (index: number) => {
   year_archives.value = data.value[index];
 };
+const yearColorFlag = ref("0");
+const yearClick = (index: string) => {
+  yearColorFlag.value = index;
+};
 </script>
 
 <style scoped>
@@ -75,8 +87,18 @@ const showArchivesByYear = (index: number) => {
   color: var(--c-color);
   width: 5rem;
 }
+.year-nameActive {
+  padding: 0.2rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--c-brand);
+  width: 5rem;
+}
 .year:hover {
   width: 100%;
+}
+.year :hover {
+  color: var(--c-brand);
 }
 .year-num {
   color: var(--c-brand);
