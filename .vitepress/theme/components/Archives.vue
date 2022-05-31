@@ -94,9 +94,9 @@ const yearClick = (index: string) => {
   color: var(--c-brand);
   width: 5rem;
 }
-.year:hover {
+/* .year:hover {
   width: 100%;
-}
+} */
 .year :hover {
   color: var(--c-brand);
 }

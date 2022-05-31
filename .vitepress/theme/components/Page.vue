@@ -2,7 +2,8 @@
   <div class="blogPage">
     <div class="blogList">
       <div class="blogListBg">
-        <div v-for="(item, index) in posts" :key="item" class="blogBg1">
+        <div v-for="item in posts" :key="item" class="blogBg1">
+          <!-- <div v-for="(item, index) in posts" :key="item" class="blogBg1"> -->
           <div class="blogBg2">
             <!-- <div class="blogImage"> -->
             <!-- <img src="/articlePicture.png" alt="文章背景图" /> -->
