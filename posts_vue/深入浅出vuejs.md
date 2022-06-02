@@ -87,4 +87,7 @@ vm.$nextTick 和 修改数据导致的dom更新同属于 微任务 所以vm.$nex
 ### 存储
 由于vm.$nextTick 会将回调添加到任务队列中延迟执行 
 在回调执行之前反复调用vm.$nextTick vue 只会向任务队列中添加一个任务
-vue.js 
+vue.js 内部有一个列表存储vm.$nextTick 参数中提供的回调
+在新一轮事件循环中 vm.$nextTick 只会向任务队列添加一个任务
+多次使用vm.$nextTick只会将回调添加到回调列表中缓存起来
+当任务触发时 依次执行列表中的所有回调并清空列表

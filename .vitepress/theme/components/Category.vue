@@ -25,8 +25,9 @@ console.log(headers, "pageData");
 <style scoped>
 .category {
   width: 20rem;
-  border-radius: 24px;
-  padding: 10px;
+  /* border-radius: 24px; */
+  padding: 5px;
+  background-color: rgba(189, 199, 209, 0.3);
 }
 .header-h2 {
   text-indent: 2;
